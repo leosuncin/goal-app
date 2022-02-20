@@ -1,4 +1,4 @@
-import { useListQuery } from '../lib/goalsService';
+import { useListQuery } from '../lib/goalsApi';
 import GoalItem from './GoalItem';
 import Spinner from './Spinner';
 

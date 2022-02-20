@@ -7,15 +7,15 @@ import {
 import { setupListeners } from '@reduxjs/toolkit/query/react';
 import { createWrapper } from 'next-redux-wrapper';
 
-import goalsService from './goalsService';
+import goalsApi from './goalsApi';
 
 export function createStore(preloadedState?: PreloadedState<AppState>) {
   const store = configureStore({
     reducer: {
-      [goalsService.reducerPath]: goalsService.reducer,
+      [goalsApi.reducerPath]: goalsApi.reducer,
     },
     middleware: (getDefaultMiddleware) =>
-      getDefaultMiddleware().concat(goalsService.middleware),
+      getDefaultMiddleware().concat(goalsApi.middleware),
     preloadedState,
   });
 
@@ -25,7 +25,7 @@ export function createStore(preloadedState?: PreloadedState<AppState>) {
 }
 
 export type AppState = {
-  [goalsService.reducerPath]: ReturnType<typeof goalsService['reducer']>;
+  [goalsApi.reducerPath]: ReturnType<typeof goalsApi['reducer']>;
 };
 
 export type AppStore = ReturnType<typeof createStore>;

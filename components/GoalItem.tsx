@@ -1,4 +1,4 @@
-import { useRemoveMutation, type Goal } from '../lib/goalsService';
+import { useRemoveMutation, type Goal } from '../lib/goalsApi';
 
 export type GoalItemProps = {
   goal: Goal;

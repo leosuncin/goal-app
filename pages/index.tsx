@@ -4,7 +4,7 @@ import Head from 'next/head';
 import GoalForm from '../components/GoalForm';
 import GoalList from '../components/GoalList';
 import Header from '../components/Header';
-import goalsService from '../lib/goalsService';
+import goalsApi from '../lib/goalsApi';
 import { wrapper } from '../lib/store';
 
 const Home: NextPage = () => {
@@ -31,9 +31,9 @@ const Home: NextPage = () => {
 
 export const getServerSideProps = wrapper.getServerSideProps(
   (store) => async () => {
-    store.dispatch(goalsService.endpoints.list.initiate());
+    store.dispatch(goalsApi.endpoints.list.initiate());
 
-    await Promise.all(goalsService.util.getRunningOperationPromises());
+    await Promise.all(goalsApi.util.getRunningOperationPromises());
 
     return {
       props: {},
