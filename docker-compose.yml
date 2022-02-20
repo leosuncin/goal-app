@@ -25,6 +25,11 @@ services:
       ME_CONFIG_MONGODB_SERVER: mongodb
     ports:
       - '8091:8081'
+  maildev:
+    image: maildev/maildev:2.0.0-beta3
+    ports:
+      - 1080:1080
+      - 1025:1025
 
 volumes:
   mongo-data:

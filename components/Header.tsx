@@ -1,10 +1,12 @@
 import Link from 'next/link';
+import { useSession, signIn, signOut } from 'next-auth/react';
 import SignInAltIcon from '~icons/fa-solid/sign-in-alt.jsx';
 import SignOutAltIcon from '~icons/fa-solid/sign-out-alt.jsx';
 import UserIcon from '~icons/fa/user.jsx';
 
 function Header() {
-  let session = false;
+  const { status } = useSession();
+  const isAuthenticated = status === 'authenticated';
 
   return (
     <header className="header">
@@ -13,20 +15,18 @@ function Header() {
       </div>
 
       <ul>
-        {session ? (
+        {isAuthenticated ? (
           <li>
-            <button className="btn" type="button">
+            <button className="btn" type="button" onClick={() => signOut()}>
               <SignOutAltIcon /> Logout
             </button>
           </li>
         ) : (
           <>
             <li>
-              <Link href="/login">
-                <a>
-                  <SignInAltIcon /> Login
-                </a>
-              </Link>
+              <button type="button" className="btn" onClick={() => signIn()}>
+                <SignInAltIcon /> Login
+              </button>
             </li>
 
             <li>
