@@ -1,4 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { HYDRATE } from 'next-redux-wrapper';
 
 const baseUrl = `${
   process.env.VERCEL_URL ?? 'http://localhost:3000'
@@ -18,6 +19,11 @@ const goalsApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl }),
   reducerPath: 'goalsApi',
   tagTypes: ['Goal'],
+  extractRehydrationInfo: (action, { reducerPath }) => {
+    if (action.type === HYDRATE) {
+      return action.payload[reducerPath];
+    }
+  },
   endpoints: (builder) => ({
     create: builder.mutation<Goal, CreateGoal>({
       query: (body) => ({
