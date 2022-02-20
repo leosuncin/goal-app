@@ -17,6 +17,7 @@ export type UpdateGoal = Pick<Goal, '_id' | 'text'>;
 const goalsApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl }),
   reducerPath: 'goalsApi',
+  tagTypes: ['Goal'],
   endpoints: (builder) => ({
     create: builder.mutation<Goal, CreateGoal>({
       query: (body) => ({
@@ -24,9 +25,11 @@ const goalsApi = createApi({
         method: 'POST',
         body,
       }),
+      invalidatesTags: [{ type: 'Goal', id: 'LIST' }],
     }),
     list: builder.query<Goal[], void>({
       query: () => '',
+      providesTags: [{ type: 'Goal', id: 'LIST' }],
     }),
     update: builder.mutation<Goal, UpdateGoal>({
       query: ({ _id, text }) => ({
@@ -34,12 +37,14 @@ const goalsApi = createApi({
         method: 'PUT',
         body: { text },
       }),
+      invalidatesTags: [{ type: 'Goal', id: 'LIST' }],
     }),
     remove: builder.mutation<undefined, Goal['_id']>({
       query: (id) => ({
         url: `/${id}`,
         method: 'DELETE',
       }),
+      invalidatesTags: [{ type: 'Goal', id: 'LIST' }],
     }),
   }),
 });

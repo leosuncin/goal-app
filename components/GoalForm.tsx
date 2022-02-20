@@ -10,6 +10,7 @@ function GoalForm() {
     ).value as string;
 
     await createGoal({ text });
+    (event.target as HTMLFormElement).reset();
   }
 
   return (
