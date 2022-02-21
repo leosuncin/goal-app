@@ -44,6 +44,7 @@ const Register: NextPage<{ csrfToken: string }> = ({ csrfToken }) => {
               name="name"
               placeholder="Enter your name"
               autoComplete="name"
+              required
             />
           </div>
 
@@ -55,6 +56,7 @@ const Register: NextPage<{ csrfToken: string }> = ({ csrfToken }) => {
               name="email"
               placeholder="Enter your email"
               autoComplete="email"
+              required
             />
           </div>
 
@@ -66,6 +68,7 @@ const Register: NextPage<{ csrfToken: string }> = ({ csrfToken }) => {
               name="password"
               placeholder="Enter password"
               autoComplete="new-password"
+              required
             />
           </div>
 

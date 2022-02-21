@@ -56,7 +56,9 @@ export default NextAuth({
         },
       },
       async authorize(credentials) {
-        if (!credentials) return null;
+        if (!credentials || !credentials.email || !credentials.password) {
+          throw new Error('UNPROCESSABLE_ENTITY');
+        }
 
         const client = await getMongoClient();
         const users = client.db().collection<User>('users');
