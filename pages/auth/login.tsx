@@ -1,12 +1,17 @@
 import type { NextPage, GetServerSidePropsContext } from 'next';
 import { signIn, getCsrfToken } from 'next-auth/react';
+import { useEffect } from 'react';
+import { toast } from 'react-toastify';
 import SignInAltIcon from '~icons/fa-solid/sign-in-alt.jsx';
 
 import Layout from '../../components/Layout';
 
-const Login: NextPage<{ csrfToken: string; callbackUrl?: string }> = ({
+type LoginProps = { csrfToken: string; callbackUrl?: string; error?: string };
+
+const Login: NextPage<LoginProps> = ({
   csrfToken,
   callbackUrl = '/',
+  error,
 }) => {
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     const formData = new FormData(event.currentTarget);
@@ -19,6 +24,12 @@ const Login: NextPage<{ csrfToken: string; callbackUrl?: string }> = ({
       callbackUrl,
     });
   }
+
+  useEffect(() => {
+    if (error === 'CredentialsSignin') {
+      toast.error('Invalid credentials');
+    }
+  }, [error]);
 
   return (
     <Layout title="Login">
@@ -76,12 +87,17 @@ const Login: NextPage<{ csrfToken: string; callbackUrl?: string }> = ({
 };
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   const csrfToken = await getCsrfToken(context);
-  const { callbackUrl = null } = context.query;
+  let { callbackUrl = null, error = null } = context.query;
+
+  if (Array.isArray(callbackUrl)) callbackUrl = callbackUrl[0];
+
+  if (Array.isArray(error)) error = error[0];
 
   return {
     props: {
       csrfToken,
       callbackUrl,
+      error,
     },
   };
 }
