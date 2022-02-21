@@ -6,6 +6,7 @@ import {
   type MongoClientOptions,
 } from 'mongodb';
 import type { NextApiRequest, NextApiResponse } from 'next';
+import type { User } from 'next-auth';
 import type { NextHandler } from 'next-connect';
 
 declare global {
@@ -16,6 +17,7 @@ declare module 'next' {
   export interface NextApiRequest {
     db: Db;
     params: Record<string, string>;
+    user: User;
   }
 }
 

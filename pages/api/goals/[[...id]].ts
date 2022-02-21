@@ -7,15 +7,18 @@ import {
   databaseMiddleware,
   validateObjectIdMiddleware,
 } from '../../../lib/mongodb';
+import { sessionMiddleware } from '../../../lib/session';
 
 export type Goal = {
   text: string;
   createdAt: Date;
+  author: ObjectId;
 };
 
 async function createGoalHandler(req: NextApiRequest, res: NextApiResponse) {
   const { text } = req.body;
   const createdAt = new Date();
+  const { user } = req;
 
   if (!text) {
     res.status(StatusCodes.UNPROCESSABLE_ENTITY).json({
@@ -31,23 +34,28 @@ async function createGoalHandler(req: NextApiRequest, res: NextApiResponse) {
 
   const goals = req.db.collection<Goal>('goals');
 
-  const { insertedId: _id } = await goals.insertOne({ text, createdAt });
+  const { insertedId: _id } = await goals.insertOne({
+    text,
+    createdAt,
+    author: ObjectId.createFromHexString(user.id),
+  });
 
-  res.status(StatusCodes.CREATED).json({ _id, text, createdAt });
+  res
+    .status(StatusCodes.CREATED)
+    .json({ _id, text, createdAt, author: user.id });
 }
 
 async function listGoalsHandler(req: NextApiRequest, res: NextApiResponse) {
   const goals = req.db.collection<Goal>('goals');
   const list: Goal[] = [];
+  const { user } = req;
+  const filter = { author: ObjectId.createFromHexString(user.id) };
 
-  const cursor = goals.find(
-    {},
-    {
-      sort: { createdAt: 1 },
-    }
-  );
+  const cursor = goals.find(filter, {
+    sort: { createdAt: 1 },
+  });
 
-  if ((await goals.estimatedDocumentCount()) === 0) {
+  if ((await goals.countDocuments(filter)) === 0) {
     res.status(StatusCodes.NO_CONTENT).send(undefined);
     return;
   }
@@ -63,6 +71,7 @@ async function listGoalsHandler(req: NextApiRequest, res: NextApiResponse) {
 async function updateGoalHandler(req: NextApiRequest, res: NextApiResponse) {
   const { id } = req.params;
   const { text } = req.body;
+  const { user } = req;
 
   if (typeof text !== 'string') {
     res.status(StatusCodes.UNPROCESSABLE_ENTITY).json({
@@ -80,6 +89,7 @@ async function updateGoalHandler(req: NextApiRequest, res: NextApiResponse) {
 
   const goal = await goals.findOne({
     _id: ObjectId.createFromHexString(id),
+    author: ObjectId.createFromHexString(user.id),
   });
 
   if (!goal) {
@@ -106,11 +116,13 @@ async function updateGoalHandler(req: NextApiRequest, res: NextApiResponse) {
 
 async function deleteGoalHandler(req: NextApiRequest, res: NextApiResponse) {
   const { id } = req.params;
+  const { user } = req;
 
   const goals = req.db.collection<Goal>('goals');
 
   const result = await goals.deleteOne({
     _id: ObjectId.createFromHexString(id),
+    author: ObjectId.createFromHexString(user.id),
   });
 
   if (result.deletedCount === 0) {
@@ -126,7 +138,7 @@ async function deleteGoalHandler(req: NextApiRequest, res: NextApiResponse) {
 }
 
 export default nc({ attachParams: true })
-  .use(databaseMiddleware)
+  .use(databaseMiddleware, sessionMiddleware)
   .post('/api/goals', createGoalHandler)
   .get('/api/goals', listGoalsHandler)
   .put('/api/goals/:id', validateObjectIdMiddleware, updateGoalHandler)
