@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { useSession, signIn, signOut } from 'next-auth/react';
+import { useSession, signOut } from 'next-auth/react';
 import SignInAltIcon from '~icons/fa-solid/sign-in-alt.jsx';
 import SignOutAltIcon from '~icons/fa-solid/sign-out-alt.jsx';
 import UserIcon from '~icons/fa/user.jsx';
@@ -24,9 +24,11 @@ function Header() {
         ) : (
           <>
             <li>
-              <button type="button" className="btn" onClick={() => signIn()}>
-                <SignInAltIcon /> Login
-              </button>
+              <Link href="/auth/login">
+                <a>
+                  <SignInAltIcon /> Login
+                </a>
+              </Link>
             </li>
 
             <li>
