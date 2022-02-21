@@ -30,7 +30,7 @@ function Header() {
             </li>
 
             <li>
-              <Link href="/register">
+              <Link href="/auth/register">
                 <a>
                   <UserIcon /> Register
                 </a>

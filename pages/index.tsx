@@ -1,22 +1,16 @@
 import type { NextPage } from 'next';
-import Head from 'next/head';
 import { useSession, getSession } from 'next-auth/react';
 
 import GoalForm from '../components/GoalForm';
 import GoalList from '../components/GoalList';
-import Header from '../components/Header';
+import Layout from '../components/Layout';
 import goalsApi from '../lib/goalsApi';
 import { wrapper } from '../lib/store';
 
 const Home: NextPage = () => {
   const { data: session } = useSession();
   return (
-    <div className="container">
-      <Head>
-        <title>Goals Dashboard</title>
-      </Head>
-      <Header />
-
+    <Layout title="Goals Dashboard">
       <section className="heading">
         <h1>Welcome {session?.user?.name}</h1>
         <p>Goals Dashboard</p>
@@ -27,7 +21,7 @@ const Home: NextPage = () => {
       <section className="content">
         <GoalList />
       </section>
-    </div>
+    </Layout>
   );
 };
 
