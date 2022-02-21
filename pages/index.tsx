@@ -8,7 +8,8 @@ import goalsApi from '../lib/goalsApi';
 import { wrapper } from '../lib/store';
 
 const Home: NextPage = () => {
-  const { data: session } = useSession();
+  const { data: session } = useSession({ required: true });
+
   return (
     <Layout title="Goals Dashboard">
       <section className="heading">
@@ -28,6 +29,16 @@ const Home: NextPage = () => {
 export const getServerSideProps = wrapper.getServerSideProps(
   (store) => async (context) => {
     const session = await getSession(context);
+
+    if (!session) {
+      return {
+        redirect: {
+          destination: '/auth/login',
+          permanent: true,
+        },
+      };
+    }
+
     store.dispatch(goalsApi.endpoints.list.initiate());
 
     await Promise.all(goalsApi.util.getRunningOperationPromises());
