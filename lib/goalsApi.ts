@@ -1,6 +1,8 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { HYDRATE } from 'next-redux-wrapper';
 
+import type { ThunksExtraArgument } from './store';
+
 const baseUrl = `${
   process.env.VERCEL_URL ?? 'http://localhost:3000'
 }/api/goals`;
@@ -8,6 +10,7 @@ const baseUrl = `${
 export type Goal = {
   _id: string;
   text: string;
+  author: string;
   createdAt: string;
 };
 
@@ -16,7 +19,19 @@ export type CreateGoal = Pick<Goal, 'text'>;
 export type UpdateGoal = Pick<Goal, '_id' | 'text'>;
 
 const goalsApi = createApi({
-  baseQuery: fetchBaseQuery({ baseUrl }),
+  baseQuery: fetchBaseQuery({
+    baseUrl,
+    prepareHeaders: (headers, { extra }) => {
+      const token = (extra as ThunksExtraArgument).getToken();
+
+      if (token) {
+        headers.set('Authorization', `Bearer ${token}`);
+      }
+
+      return headers;
+    },
+  }),
+  refetchOnFocus: true,
   reducerPath: 'goalsApi',
   tagTypes: ['Goal'],
   extractRehydrationInfo: (action, { reducerPath }) => {

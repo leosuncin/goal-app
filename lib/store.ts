@@ -5,17 +5,29 @@ import {
   Action,
 } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/query/react';
-import { createWrapper } from 'next-redux-wrapper';
+import type { GetServerSidePropsContext } from 'next';
+import { getToken } from 'next-auth/jwt';
+import { createWrapper, type Context } from 'next-redux-wrapper';
 
 import goalsApi from './goalsApi';
 
-export function createStore(preloadedState?: PreloadedState<AppState>) {
+type CreateStoreParams = {
+  preloadedState?: PreloadedState<AppState>;
+  getToken?: () => string;
+};
+
+export function createStore({
+  preloadedState,
+  getToken = () => '',
+}: CreateStoreParams = {}) {
   const store = configureStore({
     reducer: {
       [goalsApi.reducerPath]: goalsApi.reducer,
     },
     middleware: (getDefaultMiddleware) =>
-      getDefaultMiddleware().concat(goalsApi.middleware),
+      getDefaultMiddleware({
+        thunk: { extraArgument: { getToken } },
+      }).concat(goalsApi.middleware),
     preloadedState,
   });
 
@@ -23,6 +35,16 @@ export function createStore(preloadedState?: PreloadedState<AppState>) {
 
   return store;
 }
+
+function isServerSideContext(
+  context: Context
+): context is GetServerSidePropsContext {
+  return 'req' in context && Boolean(context.req);
+}
+
+export type ThunksExtraArgument = {
+  getToken: () => string;
+};
 
 export type AppState = {
   [goalsApi.reducerPath]: ReturnType<typeof goalsApi['reducer']>;
@@ -35,10 +57,24 @@ export type AppDispatch = AppStore['dispatch'];
 export type AppThunk<ReturnType = unknown> = ThunkAction<
   ReturnType,
   AppState,
-  unknown,
+  ThunksExtraArgument,
   Action<string>
 >;
 
-export const wrapper = createWrapper<AppStore>(() => createStore(), {
-  debug: process.env.NODE_ENV === 'development',
+export const wrapper = createWrapper<AppStore>((context) => {
+  let token = '';
+
+  if (isServerSideContext(context)) {
+    getToken({
+      raw: true,
+      secret: process.env.NEXTAUTH_SECRET,
+      req: context.req,
+    }).then((jwt) => {
+      token = jwt;
+    });
+  }
+
+  return createStore({
+    getToken: () => token,
+  });
 });
