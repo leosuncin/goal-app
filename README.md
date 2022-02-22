@@ -1,34 +1,61 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🔬 Example of how-to use RTK Query, Next Redux Wrapper, NextAuth and MongoDB
 
-## Getting Started
+[![GPL v3 License](https://img.shields.io/badge/License-GPLv3-green.svg)](./LICENSE)
 
-First, run the development server:
+> Use MongoDB to store the data, RTK Query to make requests, Next Redux Wrapper to dispatch action in the server side, NextAuth to authenticate using email and credentials provider
+
+## Acknowledgements
+
+- Based in the project of [Goalsetter MERN app](https://github.com/bradtraversy/mern-tutorial) by [Brad Traversy](https://www.youtube.com/c/TraversyMedia)
+
+## Environment Variables
+
+To run this project, you will need to add the following environment variables to your .env file
+
+`NEXTAUTH_URL` example _http://localhost:3000_
+
+`NEXTAUTH_SECRET` a random long string, create one using in the terminal `openssl rand -base64 32`
+
+`MONGO_URL` a connection string to the MongoDB instance, example _mongodb://localhost/admin_
+
+You can copy the example .env and edit the values
 
 ```bash
-npm run dev
-# or
-yarn dev
+  cp .env.example .env
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Run Locally
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Clone the project
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+```bash
+  git clone https://github.com/leosuncin/goal-app.git
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Go to the project directory
 
-## Learn More
+```bash
+  cd goal-app
+```
 
-To learn more about Next.js, take a look at the following resources:
+Install dependencies
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+  pnpm install
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Start the services using Docker Compose
 
-## Deploy on Vercel
+```bash
+  docker-compose up -d
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Start the server
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```bash
+  pnpm dev
+```
+
+## License
+
+Release under the terms of [GPL v3](./LICENSE)
