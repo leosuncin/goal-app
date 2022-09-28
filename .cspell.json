@@ -12,6 +12,17 @@
   ],
   "language": "en",
   "noConfigSearch": true,
+  "dictionaries": [
+    "en_US",
+    "companies",
+    "softwareTerms",
+    "misc",
+    "lorem-ipsum",
+    "typescript",
+    "node",
+    "bash",
+    "npm"
+  ],
   "words": [
     "Microbundle",
     "Nuxt",
