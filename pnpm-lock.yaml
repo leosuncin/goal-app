@@ -16,7 +16,7 @@ specifiers:
   mongodb: 4.10.0
   next: 12.1.0
   next-auth: 4.2.1
-  next-connect: 0.12.1
+  next-connect: 0.13.0
   next-redux-wrapper: 7.0.5
   nodemailer: 6.7.2
   react: 17.0.2
@@ -34,7 +34,7 @@ dependencies:
   mongodb: 4.10.0
   next: 12.1.0_sfoxds7t5ydpegc3knd667wn6m
   next-auth: 4.2.1_uwv6tj4c6jl3tcycfdgw4fi3ba
-  next-connect: 0.12.1
+  next-connect: 0.13.0
   next-redux-wrapper: 7.0.5_fefwv6wxsa44kiaacob76o2sdi
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
@@ -2764,8 +2764,8 @@ packages:
       uuid: 8.3.2
     dev: false
 
-  /next-connect/0.12.1:
-    resolution: {integrity: sha512-pzW3oKCYAaNOxQncIIv53cHrRaZSeQ2KZ9chjYx/OHgASV8qDNlVvD3Mz9RTrO9TuJs3kjt0VeTBGJmoE/yl2g==}
+  /next-connect/0.13.0:
+    resolution: {integrity: sha512-f2G4edY01XomjCECSrgOpb/zzQinJO6Whd8Zds0+rLUYhj5cLwkh6FVvZsQCSSbxSc4k9nCwNuk5NLIhvO1gUA==}
     dependencies:
       trouter: 3.2.0
     dev: false
