@@ -1,0 +1,20 @@
+[
+  {
+    "_id": "6333d86a98fe4cb48a23b6f0",
+    "text": "Make a sandwich",
+    "createdAt": "2022-09-28T05:15:22.618Z",
+    "author": "6333d82d98fe4cb48a23b6ef"
+  },
+  {
+    "_id": "6333d87498fe4cb48a23b6f1",
+    "text": "Make a salad",
+    "createdAt": "2022-09-28T05:15:32.369Z",
+    "author": "6333d82d98fe4cb48a23b6ef"
+  },
+  {
+    "_id": "6333d88098fe4cb48a23b6f2",
+    "text": "Buy milk",
+    "createdAt": "2022-09-28T05:15:44.933Z",
+    "author": "6333d82d98fe4cb48a23b6ef"
+  }
+]
