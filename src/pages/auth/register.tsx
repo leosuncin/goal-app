@@ -2,7 +2,7 @@ import type { NextPage, GetServerSidePropsContext } from 'next';
 import { signIn, getCsrfToken } from 'next-auth/react';
 import UserIcon from '~icons/fa/user.jsx';
 
-import Layout from '../../components/Layout';
+import Layout from '~app/components/Layout';
 
 const Register: NextPage<{ csrfToken: string }> = ({ csrfToken }) => {
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {

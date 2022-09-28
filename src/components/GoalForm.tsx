@@ -1,4 +1,4 @@
-import { useCreateMutation } from '../lib/goalsApi';
+import { useCreateMutation } from '~app/lib/goalsApi';
 
 function GoalForm() {
   const [createGoal] = useCreateMutation();

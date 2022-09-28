@@ -3,8 +3,8 @@ import { SessionProvider } from 'next-auth/react';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import '../styles/globals.css';
-import { wrapper } from '../lib/store';
+import '~app/styles/globals.css';
+import { wrapper } from '~app/lib/store';
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   return (

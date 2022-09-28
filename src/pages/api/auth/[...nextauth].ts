@@ -5,7 +5,7 @@ import NextAuth, { type User } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import EmailProvider from 'next-auth/providers/email';
 
-import { getMongoClient } from '../../../lib/mongodb';
+import { getMongoClient } from '~app/lib/mongodb';
 
 declare module 'next-auth' {
   interface User {

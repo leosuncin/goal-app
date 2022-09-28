@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-import Header from './Header';
+import Header from '~app/components/Header';
 
 function Layout({
   children,

@@ -9,7 +9,7 @@ import type { GetServerSidePropsContext } from 'next';
 import { getToken } from 'next-auth/jwt';
 import { createWrapper, type Context } from 'next-redux-wrapper';
 
-import goalsApi from './goalsApi';
+import goalsApi from '~app/lib/goalsApi';
 
 type CreateStoreParams = {
   preloadedState?: PreloadedState<AppState>;

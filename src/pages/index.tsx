@@ -1,11 +1,11 @@
 import type { NextPage } from 'next';
 import { useSession, getSession } from 'next-auth/react';
 
-import GoalForm from '../components/GoalForm';
-import GoalList from '../components/GoalList';
-import Layout from '../components/Layout';
-import goalsApi from '../lib/goalsApi';
-import { wrapper } from '../lib/store';
+import GoalForm from '~app/components/GoalForm';
+import GoalList from '~app/components/GoalList';
+import Layout from '~app/components/Layout';
+import goalsApi from '~app/lib/goalsApi';
+import { wrapper } from '~app/lib/store';
 
 const Home: NextPage = () => {
   const { data: session } = useSession({ required: true });

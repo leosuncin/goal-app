@@ -6,8 +6,8 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import {
   databaseMiddleware,
   validateObjectIdMiddleware,
-} from '../../../lib/mongodb';
-import { sessionMiddleware } from '../../../lib/session';
+} from '~app/lib/mongodb';
+import { sessionMiddleware } from '~app/lib/session';
 
 export type Goal = {
   text: string;

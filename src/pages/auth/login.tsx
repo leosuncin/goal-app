@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { toast } from 'react-toastify';
 import SignInAltIcon from '~icons/fa-solid/sign-in-alt.jsx';
 
-import Layout from '../../components/Layout';
+import Layout from '~app/components/Layout';
 
 type LoginProps = { csrfToken: string; callbackUrl?: string; error?: string };
 
