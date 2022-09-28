@@ -22,13 +22,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 'lts/*'
-          cache: pnpm
-      - name: Install dependencies 📦
-        run: pnpm install --frozen-lockfile --strict-peer-dependencies
       - name: Run Cypress component tests 🌲
         uses: cypress-io/github-action@v4
         with:
-          install: false
           component: true
       - name: Upload screenshots and videos on failure ⬆️
         uses: actions/upload-artifact@v3
