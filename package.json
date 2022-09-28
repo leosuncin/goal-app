@@ -12,7 +12,7 @@
   "dependencies": {
     "@next-auth/mongodb-adapter": "1.0.1",
     "@node-rs/bcrypt": "1.6.0",
-    "@reduxjs/toolkit": "1.7.2",
+    "@reduxjs/toolkit": "1.8.5",
     "http-status-codes": "2.2.0",
     "mongodb": "4.4.0",
     "next": "12.1.0",
