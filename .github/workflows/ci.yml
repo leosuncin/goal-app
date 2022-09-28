@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  component-test:
+    runs-on: ubuntu-latest
+    name: Component tests 🧩
+    if: "!contains(github.event.head_commit.message, 'skip-ci')"
+    steps:
+      - name: Checkout 🛎
+        uses: actions/checkout@v3
+      - name: Install PNPM 🧰
+        uses: pnpm/action-setup@v2
+        with:
+          version: latest
+      - name: Install Node.js LTS 📜
+        uses: actions/setup-node@v3
+        with:
+          node-version: 'lts/*'
+          cache: pnpm
+      - name: Install dependencies 📦
+        run: pnpm install --frozen-lockfile --strict-peer-dependencies
+      - name: Run Cypress component tests 🌲
+        uses: cypress-io/github-action@v4
+        with:
+          install: false
+          component: true
+      - name: Upload screenshots and videos on failure ⬆️
+        uses: actions/upload-artifact@v3
+        if: failure()
+        with:
+          name: component-test screenshots and videos
+          path: |
+            cypress/screenshots
+            cypress/videos
