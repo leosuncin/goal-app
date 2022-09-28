@@ -7,7 +7,7 @@ import type { NextHandler } from 'next-connect';
 export async function sessionMiddleware(
   req: NextApiRequest,
   res: NextApiResponse,
-  next: NextHandler
+  next: NextHandler,
 ) {
   const jwt = await getToken({ req, secret: process.env.NEXTAUTH_SECRET });
 
@@ -23,7 +23,7 @@ export async function sessionMiddleware(
   const users = req.db.collection<User>('users');
   const user = await users.findOne(
     { email: jwt.email },
-    { projection: { _id: false, id: true, email: true, name: true } }
+    { projection: { _id: false, id: true, email: true, name: true } },
   );
 
   if (!user) {

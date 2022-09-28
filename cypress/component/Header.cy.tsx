@@ -8,7 +8,7 @@ describe('Header', () => {
     cy.mount(
       <SessionProvider>
         <Header />
-      </SessionProvider>
+      </SessionProvider>,
     );
 
     cy.contains('Login').should('be.visible');
@@ -24,7 +24,7 @@ describe('Header', () => {
     cy.mount(
       <SessionProvider session={session}>
         <Header />
-      </SessionProvider>
+      </SessionProvider>,
     );
 
     cy.contains('Logout').should('be.visible');

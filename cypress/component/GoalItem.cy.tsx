@@ -24,7 +24,7 @@ describe('GoalItem', () => {
     cy.mount(
       <Provider store={store}>
         <GoalItem goal={goal} />
-      </Provider>
+      </Provider>,
     );
 
     cy.contains(goal.text).should('be.visible');
@@ -36,7 +36,7 @@ describe('GoalItem', () => {
     cy.mount(
       <Provider store={store}>
         <GoalItem goal={goal} />
-      </Provider>
+      </Provider>,
     );
 
     cy.get('button').click();

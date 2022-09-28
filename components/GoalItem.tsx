@@ -9,7 +9,7 @@ const dateFormat = new Intl.DateTimeFormat(
   {
     dateStyle: 'medium',
     timeStyle: 'medium',
-  }
+  },
 );
 
 function GoalItem({ goal }: GoalItemProps) {

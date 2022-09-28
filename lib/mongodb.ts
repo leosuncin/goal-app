@@ -44,7 +44,7 @@ export async function getMongoClient() {
 export function validateObjectIdMiddleware(
   req: NextApiRequest,
   res: NextApiResponse,
-  next: NextHandler
+  next: NextHandler,
 ) {
   const { id } = req.params;
 
@@ -62,7 +62,7 @@ export function validateObjectIdMiddleware(
 export async function databaseMiddleware(
   req: NextApiRequest,
   _res: NextApiResponse,
-  next: NextHandler
+  next: NextHandler,
 ) {
   const client = await getMongoClient();
 

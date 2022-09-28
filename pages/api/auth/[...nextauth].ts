@@ -21,7 +21,7 @@ type Register = {
 };
 
 function isRegister(
-  credentials: Record<string, string>
+  credentials: Record<string, string>,
 ): credentials is Register {
   return '_type' in credentials && credentials._type === 'register';
 }

@@ -6,7 +6,7 @@ const nextConfig = {
       require('unplugin-icons/webpack')({
         compiler: 'jsx',
         jsx: 'react',
-      })
+      }),
     );
 
     return config;
