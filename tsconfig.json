@@ -14,7 +14,11 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "types": ["unplugin-icons/types/react"]
+    "types": ["unplugin-icons/types/react"],
+    "baseUrl": ".",
+    "paths": {
+      "~app/*": ["src/*"]
+    }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

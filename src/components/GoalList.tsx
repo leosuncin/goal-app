@@ -1,6 +1,6 @@
-import { useListQuery } from '../lib/goalsApi';
-import GoalItem from './GoalItem';
-import Spinner from './Spinner';
+import { useListQuery } from '~app/lib/goalsApi';
+import GoalItem from '~app/components/GoalItem';
+import Spinner from '~app/components/Spinner';
 
 function GoalList() {
   const { data: goals, isLoading } = useListQuery();

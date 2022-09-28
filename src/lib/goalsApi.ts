@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { HYDRATE } from 'next-redux-wrapper';
 
-import type { ThunksExtraArgument } from './store';
+import type { ThunksExtraArgument } from '~app/lib/store';
 
 const baseUrl = `${
   process.env.VERCEL_URL ?? 'http://localhost:3000'

@@ -1,7 +1,7 @@
 import type { Session } from 'next-auth';
 import { SessionProvider } from 'next-auth/react';
 
-import Header from '../../src/components/Header';
+import Header from '~app/components/Header';
 
 describe('Header', () => {
   it('render without a session', () => {

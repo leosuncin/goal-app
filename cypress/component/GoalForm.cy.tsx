@@ -1,8 +1,8 @@
 import { StatusCodes } from 'http-status-codes';
 import { Provider } from 'react-redux';
 
-import GoalForm from '../../src/components/GoalForm';
-import { createStore } from '../../src/lib/store';
+import GoalForm from '~app/components/GoalForm';
+import { createStore } from '~app/lib/store';
 
 describe('GoalForm', () => {
   const text = 'Make a sandwich';

@@ -1,8 +1,8 @@
 import { StatusCodes } from 'http-status-codes';
 import { Provider } from 'react-redux';
 
-import GoalItem from '../../src/components/GoalItem';
-import { createStore } from '../../src/lib/store';
+import GoalItem from '~app/components/GoalItem';
+import { createStore } from '~app/lib/store';
 
 const goal = {
   _id: '6333b5c9d39198575e0e04a6',
