@@ -1,7 +1,7 @@
 import { Provider } from 'react-redux';
 
-import GoalList from '../../components/GoalList';
-import { createStore } from '../../lib/store';
+import GoalList from '../../src/components/GoalList';
+import { createStore } from '../../src/lib/store';
 
 describe('GoalList', () => {
   it('render the list', () => {
