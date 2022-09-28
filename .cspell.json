@@ -33,7 +33,8 @@
     "vercel",
     "vuepress",
     "wscript",
-    "proselint"
+    "proselint",
+    "gitleaks"
   ],
   "version": "0.2"
 }
