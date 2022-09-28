@@ -1,7 +1,9 @@
+import styles from '~app/components/Spinner.module.css';
+
 function Spinner() {
   return (
-    <div className="loadingSpinnerContainer">
-      <div className="loadingSpinner" />
+    <div className={styles.container}>
+      <div className={styles.spinner} />
     </div>
   );
 }
