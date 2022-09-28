@@ -45,7 +45,8 @@
     "vuepress",
     "wscript",
     "proselint",
-    "gitleaks"
+    "gitleaks",
+    "trivy"
   ],
   "version": "0.2"
 }
