@@ -4,12 +4,14 @@ import SignInAltIcon from '~icons/fa-solid/sign-in-alt.jsx';
 import SignOutAltIcon from '~icons/fa-solid/sign-out-alt.jsx';
 import UserIcon from '~icons/fa/user.jsx';
 
+import styles from '~app/components/Header.module.css';
+
 function Header() {
   const { status } = useSession();
   const isAuthenticated = status === 'authenticated';
 
   return (
-    <header className="header">
+    <header className={styles.header}>
       <div className="logo">
         <Link href="/">GoalSetter</Link>
       </div>
