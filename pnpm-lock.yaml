@@ -4,7 +4,7 @@ specifiers:
   '@iconify/json': 2.1.114
   '@next-auth/mongodb-adapter': 1.1.0
   '@node-rs/bcrypt': 1.6.0
-  '@reduxjs/toolkit': 1.7.2
+  '@reduxjs/toolkit': 1.8.5
   '@svgr/core': 6.2.1
   '@types/node': 17.0.18
   '@types/react': 17.0.50
@@ -29,7 +29,7 @@ specifiers:
 dependencies:
   '@next-auth/mongodb-adapter': 1.1.0_dlyitdpoque3lmu5e5wldfxzka
   '@node-rs/bcrypt': 1.6.0
-  '@reduxjs/toolkit': 1.7.2_g7iv2n2puphpvmcbz4lgg4le54
+  '@reduxjs/toolkit': 1.8.5_g7iv2n2puphpvmcbz4lgg4le54
   http-status-codes: 2.2.0
   mongodb: 4.4.0
   next: 12.1.0_sfoxds7t5ydpegc3knd667wn6m
@@ -671,11 +671,11 @@ packages:
     resolution: {integrity: sha512-mMyQ9vjpuFqePkfe5bZVIf/H3Dmk6wA8Kjxff9RcO4kqzJo+Ek9pGKwZHpeMr7Eku0QhLXMCd7fNCSnEnRMubg==}
     dev: false
 
-  /@reduxjs/toolkit/1.7.2_g7iv2n2puphpvmcbz4lgg4le54:
-    resolution: {integrity: sha512-wwr3//Ar8ZhM9bS58O+HCIaMlR4Y6SNHfuszz9hKnQuFIKvwaL3Kmjo6fpDKUOjo4Lv54Yi299ed8rofCJ/Vjw==}
+  /@reduxjs/toolkit/1.8.5_g7iv2n2puphpvmcbz4lgg4le54:
+    resolution: {integrity: sha512-f4D5EXO7A7Xq35T0zRbWq5kJQyXzzscnHKmjnu2+37B3rwHU6mX9PYlbfXdnxcY6P/7zfmjhgan0Z+yuOfeBmA==}
     peerDependencies:
-      react: ^16.9.0 || ^17.0.0 || 18.0.0-beta
-      react-redux: ^7.2.1 || ^8.0.0-beta
+      react: ^16.9.0 || ^17.0.0 || ^18
+      react-redux: ^7.2.1 || ^8.0.2
     peerDependenciesMeta:
       react:
         optional: true
