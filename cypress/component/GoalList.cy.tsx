@@ -15,7 +15,7 @@ describe('GoalList', () => {
     cy.mount(
       <Provider store={store}>
         <GoalList />
-      </Provider>
+      </Provider>,
     );
 
     cy.wait('@listGoals');
@@ -33,7 +33,7 @@ describe('GoalList', () => {
     cy.mount(
       <Provider store={store}>
         <GoalList />
-      </Provider>
+      </Provider>,
     );
 
     cy.wait('@listGoals');

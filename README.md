@@ -12,7 +12,7 @@
 
 To run this project, you will need to add the following environment variables to your .env file
 
-`NEXTAUTH_URL` example _http://localhost:3000_
+`NEXTAUTH_URL` example _<http://localhost:3000>_
 
 `NEXTAUTH_SECRET` a random long string, create one using in the terminal `openssl rand -base64 32`
 

@@ -37,7 +37,7 @@ export function createStore({
 }
 
 function isServerSideContext(
-  context: Context
+  context: Context,
 ): context is GetServerSidePropsContext {
   return 'req' in context && Boolean(context.req);
 }

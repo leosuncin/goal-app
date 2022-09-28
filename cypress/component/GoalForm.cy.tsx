@@ -25,7 +25,7 @@ describe('GoalForm', () => {
     cy.mount(
       <Provider store={store}>
         <GoalForm />
-      </Provider>
+      </Provider>,
     );
   });
 
@@ -35,7 +35,7 @@ describe('GoalForm', () => {
     cy.mount(
       <Provider store={store}>
         <GoalForm />
-      </Provider>
+      </Provider>,
     );
 
     cy.get('input[type=text]').type(text);
@@ -53,7 +53,7 @@ describe('GoalForm', () => {
     cy.mount(
       <Provider store={store}>
         <GoalForm />
-      </Provider>
+      </Provider>,
     );
 
     cy.get('button[type=submit]').click();

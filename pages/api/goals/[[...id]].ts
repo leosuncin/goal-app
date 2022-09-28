@@ -103,7 +103,7 @@ async function updateGoalHandler(req: NextApiRequest, res: NextApiResponse) {
 
   const result = await goals.updateOne(
     { _id: ObjectId.createFromHexString(id) },
-    { $set: { text } }
+    { $set: { text } },
   );
 
   if (result.modifiedCount === 0) {
