@@ -32,7 +32,8 @@
     "tsbuildinfo",
     "vercel",
     "vuepress",
-    "wscript"
+    "wscript",
+    "proselint"
   ],
   "version": "0.2"
 }
