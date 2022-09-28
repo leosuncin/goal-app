@@ -1,5 +1,5 @@
-# Created by https://www.toptal.com/developers/gitignore/api/node,now,linux,visualstudiocode
-# Edit at https://www.toptal.com/developers/gitignore?templates=node,now,linux,visualstudiocode
+# Created by https://www.toptal.com/developers/gitignore/api/node,now,linux,visualstudiocode,cypressio
+# Edit at https://www.toptal.com/developers/gitignore?templates=node,now,linux,visualstudiocode,cypressio
 
 ### Linux ###
 *~
@@ -157,4 +157,13 @@ temp/
 .history
 .ionide
 
-# End of https://www.toptal.com/developers/gitignore/api/node,now,cypressio,linux,visualstudiocode
+### CypressIO ###
+# gitignore template for the CypressIO, browser test framework
+# website: https://www.cypress.io/
+
+cypress/results/*
+cypress/reports/*
+cypress/screenshots/*
+cypress/videos/*
+
+# End of https://www.toptal.com/developers/gitignore/api/node,now,linux,visualstudiocode,cypressio
