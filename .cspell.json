@@ -46,7 +46,8 @@
     "wscript",
     "proselint",
     "gitleaks",
-    "trivy"
+    "trivy",
+    "automerge"
   ],
   "version": "0.2"
 }
