@@ -7,10 +7,32 @@
     ".vscode",
     "megalinter",
     "package-lock.json",
-    "report"
+    "report",
+    ".next"
   ],
   "language": "en",
   "noConfigSearch": true,
-  "words": ["megalinter", "oxsecurity"],
+  "words": [
+    "Microbundle",
+    "Nuxt",
+    "dotenv",
+    "eslintcache",
+    "ionide",
+    "jscoverage",
+    "jspm",
+    "lcov",
+    "megalinter",
+    "nuxt",
+    "oxsecurity",
+    "pids",
+    "rollup",
+    "stefanzweifel",
+    "stylelint",
+    "stylelintcache",
+    "tsbuildinfo",
+    "vercel",
+    "vuepress",
+    "wscript"
+  ],
   "version": "0.2"
 }
