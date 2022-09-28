@@ -1,0 +1,5 @@
+node_modules/
+.next/
+coverage/
+megalinter-reports/
+pnpm-lock.yaml
