@@ -13,7 +13,7 @@ specifiers:
   eslint: 8.9.0
   eslint-config-next: 12.1.0
   http-status-codes: 2.2.0
-  mongodb: 4.4.0
+  mongodb: 4.10.0
   next: 12.1.0
   next-auth: 4.2.1
   next-connect: 0.12.1
@@ -27,11 +27,11 @@ specifiers:
   unplugin-icons: 0.13.2
 
 dependencies:
-  '@next-auth/mongodb-adapter': 1.1.0_dlyitdpoque3lmu5e5wldfxzka
+  '@next-auth/mongodb-adapter': 1.1.0_sdozwgylqigh7bm2v6ltqe2daa
   '@node-rs/bcrypt': 1.6.0
   '@reduxjs/toolkit': 1.8.5_g7iv2n2puphpvmcbz4lgg4le54
   http-status-codes: 2.2.0
-  mongodb: 4.4.0
+  mongodb: 4.10.0
   next: 12.1.0_sfoxds7t5ydpegc3knd667wn6m
   next-auth: 4.2.1_uwv6tj4c6jl3tcycfdgw4fi3ba
   next-connect: 0.12.1
@@ -403,13 +403,13 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.11
     dev: true
 
-  /@next-auth/mongodb-adapter/1.1.0_dlyitdpoque3lmu5e5wldfxzka:
+  /@next-auth/mongodb-adapter/1.1.0_sdozwgylqigh7bm2v6ltqe2daa:
     resolution: {integrity: sha512-jB63vZYwgyVQFNGXwNaxZODVAsdZZCuCvN+uY8mp0lXLIstd/4/GbevWK4eHlUvoteOOKlYJxW46FbRuuh+WBw==}
     peerDependencies:
       mongodb: ^4.1.1
       next-auth: ^4
     dependencies:
-      mongodb: 4.4.0
+      mongodb: 4.10.0
       next-auth: 4.2.1_uwv6tj4c6jl3tcycfdgw4fi3ba
     dev: false
 
@@ -1161,8 +1161,8 @@ packages:
       picocolors: 1.0.0
     dev: true
 
-  /bson/4.6.1:
-    resolution: {integrity: sha512-I1LQ7Hz5zgwR4QquilLNZwbhPw0Apx7i7X9kGMBTsqPdml/03Q9NBtD9nt/19ahjlphktQImrnderxqpzeVDjw==}
+  /bson/4.7.0:
+    resolution: {integrity: sha512-VrlEE4vuiO1WTpfof4VmaVolCVYkYTgB9iWgYNOrVlnifpME/06fhFRmONgBhClD5pFC1t9ZWqFUQEQAzY43bA==}
     engines: {node: '>=6.9.0'}
     dependencies:
       buffer: 5.7.1
@@ -1496,8 +1496,8 @@ packages:
     engines: {node: '>=0.4.0'}
     dev: true
 
-  /denque/2.0.1:
-    resolution: {integrity: sha512-tfiWc6BQLXNLpNiR5iGd0Ocu3P3VpxfzFiqubLgMfhfOw9WyvgJBd46CClNn9k3qfbjvT//0cf7AlYRX/OslMQ==}
+  /denque/2.1.0:
+    resolution: {integrity: sha512-HVQE3AAb/pxF8fQAoiqpvg9i3evqug3hoiwakOyZAwJm+6vZehbkYXZ0l4JxS+I3QxM97v5aaRNhj8v5oBhekw==}
     engines: {node: '>=0.10'}
     dev: false
 
@@ -2304,8 +2304,8 @@ packages:
       side-channel: 1.0.4
     dev: true
 
-  /ip/1.1.5:
-    resolution: {integrity: sha1-vd7XARQpCCjAoDnnLvJfWq7ENUo=}
+  /ip/2.0.0:
+    resolution: {integrity: sha512-WKa+XuLG1A1R0UWhl2+1XQSi+fZWMsYKffMZTTYsiZaUD8k2yDAj5atimTUD2TZkyCkNEeYE5NhFZmupOGtjYQ==}
     dev: false
 
   /is-arrayish/0.2.1:
@@ -2699,21 +2699,21 @@ packages:
     resolution: {integrity: sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q==}
     dev: true
 
-  /mongodb-connection-string-url/2.4.2:
-    resolution: {integrity: sha512-mZUXF6nUzRWk5J3h41MsPv13ukWlH4jOMSk6astVeoZ1EbdTJyF5I3wxKkvqBAOoVtzLgyEYUvDjrGdcPlKjAw==}
+  /mongodb-connection-string-url/2.5.3:
+    resolution: {integrity: sha512-f+/WsED+xF4B74l3k9V/XkTVj5/fxFH2o5ToKXd8Iyi5UhM+sO9u0Ape17Mvl/GkZaFtM0HQnzAG5OTmhKw+tQ==}
     dependencies:
       '@types/whatwg-url': 8.2.1
       whatwg-url: 11.0.0
     dev: false
 
-  /mongodb/4.4.0:
-    resolution: {integrity: sha512-1hPhutJj6yxxu0ymwsO0uEimTo+QTh3oQP6YHxmLneBFBOGydYFdnmDDuLiGWimAlMdRN9WuDXY+JGp47aeOwA==}
+  /mongodb/4.10.0:
+    resolution: {integrity: sha512-My2QxLTw0Cc1O9gih0mz4mqo145Jq4rLAQx0Glk/Ha9iYBzYpt4I2QFNRIh35uNFNfe8KFQcdwY1/HKxXBkinw==}
     engines: {node: '>=12.9.0'}
     dependencies:
-      bson: 4.6.1
-      denque: 2.0.1
-      mongodb-connection-string-url: 2.4.2
-      socks: 2.6.2
+      bson: 4.7.0
+      denque: 2.1.0
+      mongodb-connection-string-url: 2.5.3
+      socks: 2.7.0
     optionalDependencies:
       saslprep: 1.0.3
     dev: false
@@ -3375,11 +3375,11 @@ packages:
     engines: {node: '>= 6.0.0', npm: '>= 3.0.0'}
     dev: false
 
-  /socks/2.6.2:
-    resolution: {integrity: sha512-zDZhHhZRY9PxRruRMR7kMhnf3I8hDs4S3f9RecfnGxvcBHQcKcIH/oUcEWffsfl1XxdYlA7nnlGbbTvPz9D8gA==}
+  /socks/2.7.0:
+    resolution: {integrity: sha512-scnOe9y4VuiNUULJN72GrM26BNOjVsfPXI+j+98PkyEfsIXroa5ofyjT+FzGvn/xHs73U2JtoBYAVx9Hl4quSA==}
     engines: {node: '>= 10.13.0', npm: '>= 3.0.0'}
     dependencies:
-      ip: 1.1.5
+      ip: 2.0.0
       smart-buffer: 4.2.0
     dev: false
 
@@ -3393,7 +3393,7 @@ packages:
     dev: true
 
   /sparse-bitfield/3.0.3:
-    resolution: {integrity: sha1-/0rm5oZWBWuks+eSqzM004JzyhE=}
+    resolution: {integrity: sha512-kvzhi7vqKTfkh0PZU+2D2PIllw2ymqJKujUcyPMd9Y75Nv4nPbGJZXNhxsgdQab2BmlDct1YnfQCguEvHr7VsQ==}
     dependencies:
       memory-pager: 1.5.0
     dev: false
