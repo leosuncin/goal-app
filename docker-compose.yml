@@ -9,24 +9,26 @@ services:
     ports:
       - '27017-27019:27017-27019'
     healthcheck:
-      test: echo 'db.runCommand("ping").ok' | mongo mongodb:27017/test --quiet
+      test: >
+        if mongo --quiet mongodb/test --eval 'quit(db.runCommand({ ping: 1 }).ok ? 0 : 2)'; then
+          exit 0
+        fi
       interval: 10s
       timeout: 10s
       retries: 5
       start_period: 20s
   mongodb_web:
-    image: mongo-express
+    image: mongo-express:1.0.0-alpha
     depends_on:
-      - mongodb
-    restart: on-failure
+      mongodb:
+        condition: service_healthy
     environment:
-      ME_CONFIG_MONGODB_ADMINUSERNAME: ${MONGO_INITDB_ROOT_USERNAME}
-      ME_CONFIG_MONGODB_ADMINPASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
-      ME_CONFIG_MONGODB_SERVER: mongodb
+      ME_CONFIG_MONGODB_ENABLE_ADMIN: 'true'
+      ME_CONFIG_MONGODB_URL: mongodb://${MONGO_INITDB_ROOT_USERNAME}:${MONGO_INITDB_ROOT_PASSWORD}@mongodb:27017/
     ports:
       - '8091:8081'
   maildev:
-    image: maildev/maildev:2.0.0-beta3
+    image: maildev/maildev:2.0.5
     ports:
       - 1080:1080
       - 1025:1025
