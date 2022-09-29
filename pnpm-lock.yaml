@@ -21,7 +21,7 @@ specifiers:
   nodemailer: 6.8.0
   react: 18.2.0
   react-dom: 18.2.0
-  react-redux: 7.2.9
+  react-redux: 8.0.4
   react-toastify: 9.0.8
   typescript: 4.8.4
   unplugin-icons: 0.14.11
@@ -29,16 +29,16 @@ specifiers:
 dependencies:
   '@next-auth/mongodb-adapter': 1.1.0_qqo6gdduo35kgxxw4qtelkwkxe
   '@node-rs/bcrypt': 1.6.1
-  '@reduxjs/toolkit': 1.8.5_7ozmmenbreubqajvpxb2pmuuau
+  '@reduxjs/toolkit': 1.8.5_kuo2ie247izvzll3jejufdtq3q
   http-status-codes: 2.2.0
   mongodb: 4.10.0
   next: 12.3.1_biqbaboplfbrettd7655fr4n2y
   next-auth: 4.12.2_pvhs6umhoiyo7cgwjp6cvqsra4
   next-connect: 0.13.0
-  next-redux-wrapper: 8.0.0_qlgnlvveutz2aewwvw46hmo5au
+  next-redux-wrapper: 8.0.0_wnml2u2rjvrq3plu2g7enler3e
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
-  react-redux: 7.2.9_biqbaboplfbrettd7655fr4n2y
+  react-redux: 8.0.4_rj7ozvcq3uehdlnj3cbwzbi5ce
   react-toastify: 9.0.8_biqbaboplfbrettd7655fr4n2y
 
 devDependencies:
@@ -725,7 +725,7 @@ packages:
     resolution: {integrity: sha512-mMyQ9vjpuFqePkfe5bZVIf/H3Dmk6wA8Kjxff9RcO4kqzJo+Ek9pGKwZHpeMr7Eku0QhLXMCd7fNCSnEnRMubg==}
     dev: false
 
-  /@reduxjs/toolkit/1.8.5_7ozmmenbreubqajvpxb2pmuuau:
+  /@reduxjs/toolkit/1.8.5_kuo2ie247izvzll3jejufdtq3q:
     resolution: {integrity: sha512-f4D5EXO7A7Xq35T0zRbWq5kJQyXzzscnHKmjnu2+37B3rwHU6mX9PYlbfXdnxcY6P/7zfmjhgan0Z+yuOfeBmA==}
     peerDependencies:
       react: ^16.9.0 || ^17.0.0 || ^18
@@ -738,7 +738,7 @@ packages:
     dependencies:
       immer: 9.0.12
       react: 18.2.0
-      react-redux: 7.2.9_biqbaboplfbrettd7655fr4n2y
+      react-redux: 8.0.4_rj7ozvcq3uehdlnj3cbwzbi5ce
       redux: 4.1.2
       redux-thunk: 2.4.1_redux@4.1.2
       reselect: 4.1.5
@@ -908,6 +908,7 @@ packages:
       '@types/react': 18.0.21
       hoist-non-react-statics: 3.3.2
       redux: 4.1.2
+    dev: true
 
   /@types/react/18.0.21:
     resolution: {integrity: sha512-7QUCOxvFgnD5Jk8ZKlUAhVcRj7GuJRjnjjiY/IUBWKgOlnvDvTMLD4RTF7NPyVmbRhNrbomZiOepg7M/2Kj1mA==}
@@ -926,6 +927,10 @@ packages:
   /@types/sizzle/2.3.3:
     resolution: {integrity: sha512-JYM8x9EGF163bEyhdJBpR2QX1R5naCJHC8ucJylJ3w9/CVBaskdQ8WqBf8MmQrd1kRvp/a4TS8HJ+bxzR7ZJYQ==}
     dev: true
+
+  /@types/use-sync-external-store/0.0.3:
+    resolution: {integrity: sha512-EwmlvuaxPNej9+T4v5AuBPJa2x2UOJVdjCtDHgcDqitUeOtjnJKJ+apYjVcAoBEMjKW1VVFGZLUb5+qqa09XFA==}
+    dev: false
 
   /@types/webidl-conversions/6.1.1:
     resolution: {integrity: sha512-XAahCdThVuCFDQLT7R7Pk/vqeObFNL3YqRyFZg+AqAP/W1/w3xHaIxuW7WszQqTbIBOPRcItYJIou3i/mppu3Q==}
@@ -2995,7 +3000,7 @@ packages:
       trouter: 3.2.0
     dev: false
 
-  /next-redux-wrapper/8.0.0_qlgnlvveutz2aewwvw46hmo5au:
+  /next-redux-wrapper/8.0.0_wnml2u2rjvrq3plu2g7enler3e:
     resolution: {integrity: sha512-zKRdpvDeqNXQr1j5DUWwsB2fz6XpHR32iy2qJGItTKLsbLB9GvtxDL9b4mFCfhDvnzy5dw97UqMjWDpFY8h0zA==}
     peerDependencies:
       next: '>=9'
@@ -3004,7 +3009,7 @@ packages:
     dependencies:
       next: 12.3.1_biqbaboplfbrettd7655fr4n2y
       react: 18.2.0
-      react-redux: 7.2.9_biqbaboplfbrettd7655fr4n2y
+      react-redux: 8.0.4_rj7ozvcq3uehdlnj3cbwzbi5ce
     dev: false
 
   /next/12.3.1_biqbaboplfbrettd7655fr4n2y:
@@ -3079,6 +3084,7 @@ packages:
   /object-assign/4.1.1:
     resolution: {integrity: sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM=}
     engines: {node: '>=0.10.0'}
+    dev: true
 
   /object-hash/2.2.0:
     resolution: {integrity: sha512-gScRMn0bS5fH+IuwyIFgnh9zBdo4DV+6GhygmWM9HyNJSgS0hScp1f5vjtm7oIIOiT9trXrShAkLFSc2IqKNgw==}
@@ -3349,6 +3355,7 @@ packages:
       loose-envify: 1.4.0
       object-assign: 4.1.1
       react-is: 16.13.1
+    dev: true
 
   /proxy-from-env/1.0.0:
     resolution: {integrity: sha512-F2JHgJQ1iqwnHDcQjVBsq3n/uoaFL+iPW/eAeL7kVxy/2RrWaN4WroKjjvbsoRtv0ftelNyC01bjRhn/bhcf4A==}
@@ -3391,30 +3398,40 @@ packages:
   /react-is/16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
 
-  /react-is/17.0.2:
-    resolution: {integrity: sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==}
+  /react-is/18.2.0:
+    resolution: {integrity: sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==}
     dev: false
 
-  /react-redux/7.2.9_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-Gx4L3uM182jEEayZfRbI/G11ZpYdNAnBs70lFVMNdHJI76XYtR+7m0MN+eAs7UHBPhWXcnFPaS+9owSCJQHNpQ==}
+  /react-redux/8.0.4_rj7ozvcq3uehdlnj3cbwzbi5ce:
+    resolution: {integrity: sha512-yMfQ7mX6bWuicz2fids6cR1YT59VTuT8MKyyE310wJQlINKENCeT1UcPdEiX6znI5tF8zXyJ/VYvDgeGuaaNwQ==}
     peerDependencies:
-      react: ^16.8.3 || ^17 || ^18
-      react-dom: '*'
-      react-native: '*'
+      '@types/react': ^16.8 || ^17.0 || ^18.0
+      '@types/react-dom': ^16.8 || ^17.0 || ^18.0
+      react: ^16.8 || ^17.0 || ^18.0
+      react-dom: ^16.8 || ^17.0 || ^18.0
+      react-native: '>=0.59'
+      redux: ^4
     peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      '@types/react-dom':
+        optional: true
       react-dom:
         optional: true
       react-native:
         optional: true
+      redux:
+        optional: true
     dependencies:
       '@babel/runtime': 7.17.2
-      '@types/react-redux': 7.1.24
+      '@types/hoist-non-react-statics': 3.3.1
+      '@types/react': 18.0.21
+      '@types/use-sync-external-store': 0.0.3
       hoist-non-react-statics: 3.3.2
-      loose-envify: 1.4.0
-      prop-types: 15.8.1
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
-      react-is: 17.0.2
+      react-is: 18.2.0
+      use-sync-external-store: 1.2.0_react@18.2.0
     dev: false
 
   /react-toastify/9.0.8_biqbaboplfbrettd7655fr4n2y:
