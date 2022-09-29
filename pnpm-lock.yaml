@@ -22,7 +22,7 @@ specifiers:
   react: 17.0.2
   react-dom: 17.0.2
   react-redux: 7.2.9
-  react-toastify: 8.2.0
+  react-toastify: 9.0.8
   typescript: 4.8.4
   unplugin-icons: 0.13.2
 
@@ -39,7 +39,7 @@ dependencies:
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
   react-redux: 7.2.9_sfoxds7t5ydpegc3knd667wn6m
-  react-toastify: 8.2.0_sfoxds7t5ydpegc3knd667wn6m
+  react-toastify: 9.0.8_sfoxds7t5ydpegc3knd667wn6m
 
 devDependencies:
   '@iconify/json': 2.1.114
@@ -3198,8 +3198,8 @@ packages:
       react-is: 17.0.2
     dev: false
 
-  /react-toastify/8.2.0_sfoxds7t5ydpegc3knd667wn6m:
-    resolution: {integrity: sha512-Pg2Ju7NngAamarFvLwqrFomJ57u/Ay6i6zfLurt/qPynWkAkOthu6vxfqYpJCyNhHRhR4hu7+bySSeWWJu6PAg==}
+  /react-toastify/9.0.8_sfoxds7t5ydpegc3knd667wn6m:
+    resolution: {integrity: sha512-EwM+teWt49HSHx+67qI08yLAW1zAsBxCXLCsUfxHYv1W7/R3ZLhrqKalh7j+kjgPna1h5LQMSMwns4tB4ww2yQ==}
     peerDependencies:
       react: '>=16'
       react-dom: '>=16'
