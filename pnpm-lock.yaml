@@ -8,7 +8,7 @@ specifiers:
   '@svgr/core': 6.3.1
   '@types/node': 17.0.18
   '@types/react': 18.0.21
-  '@types/react-redux': 7.1.22
+  '@types/react-redux': 7.1.24
   cypress: 10.9.0
   eslint: 8.9.0
   eslint-config-next: 12.1.0
@@ -21,7 +21,7 @@ specifiers:
   nodemailer: 6.8.0
   react: 17.0.2
   react-dom: 17.0.2
-  react-redux: 7.2.6
+  react-redux: 7.2.9
   react-toastify: 8.2.0
   typescript: 4.5.5
   unplugin-icons: 0.13.2
@@ -29,16 +29,16 @@ specifiers:
 dependencies:
   '@next-auth/mongodb-adapter': 1.1.0_sdozwgylqigh7bm2v6ltqe2daa
   '@node-rs/bcrypt': 1.6.1
-  '@reduxjs/toolkit': 1.8.5_g7iv2n2puphpvmcbz4lgg4le54
+  '@reduxjs/toolkit': 1.8.5_csuupx2mfbspdz76fkecdgkise
   http-status-codes: 2.2.0
   mongodb: 4.10.0
   next: 12.1.0_sfoxds7t5ydpegc3knd667wn6m
   next-auth: 4.2.1_7p3tgs4bixrkhjsilod2rkkgma
   next-connect: 0.13.0
-  next-redux-wrapper: 8.0.0_fefwv6wxsa44kiaacob76o2sdi
+  next-redux-wrapper: 8.0.0_5b4gxmkmxbqxsxvxe6wzfweszq
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
-  react-redux: 7.2.6_sfoxds7t5ydpegc3knd667wn6m
+  react-redux: 7.2.9_sfoxds7t5ydpegc3knd667wn6m
   react-toastify: 8.2.0_sfoxds7t5ydpegc3knd667wn6m
 
 devDependencies:
@@ -46,7 +46,7 @@ devDependencies:
   '@svgr/core': 6.3.1
   '@types/node': 17.0.18
   '@types/react': 18.0.21
-  '@types/react-redux': 7.1.22
+  '@types/react-redux': 7.1.24
   cypress: 10.9.0
   eslint: 8.9.0
   eslint-config-next: 12.1.0_axndrkqnprvxmsimme6jrbasqi
@@ -688,7 +688,7 @@ packages:
     resolution: {integrity: sha512-mMyQ9vjpuFqePkfe5bZVIf/H3Dmk6wA8Kjxff9RcO4kqzJo+Ek9pGKwZHpeMr7Eku0QhLXMCd7fNCSnEnRMubg==}
     dev: false
 
-  /@reduxjs/toolkit/1.8.5_g7iv2n2puphpvmcbz4lgg4le54:
+  /@reduxjs/toolkit/1.8.5_csuupx2mfbspdz76fkecdgkise:
     resolution: {integrity: sha512-f4D5EXO7A7Xq35T0zRbWq5kJQyXzzscnHKmjnu2+37B3rwHU6mX9PYlbfXdnxcY6P/7zfmjhgan0Z+yuOfeBmA==}
     peerDependencies:
       react: ^16.9.0 || ^17.0.0 || ^18
@@ -701,7 +701,7 @@ packages:
     dependencies:
       immer: 9.0.12
       react: 17.0.2
-      react-redux: 7.2.6_sfoxds7t5ydpegc3knd667wn6m
+      react-redux: 7.2.9_sfoxds7t5ydpegc3knd667wn6m
       redux: 4.1.2
       redux-thunk: 2.4.1_redux@4.1.2
       reselect: 4.1.5
@@ -858,8 +858,8 @@ packages:
   /@types/prop-types/15.7.4:
     resolution: {integrity: sha512-rZ5drC/jWjrArrS8BR6SIr4cWpW09RNTYt9AMZo3Jwwif+iacXAqgVjm0B0Bv/S1jhDXKHqRVNCbACkJ89RAnQ==}
 
-  /@types/react-redux/7.1.22:
-    resolution: {integrity: sha512-GxIA1kM7ClU73I6wg9IRTVwSO9GS+SAKZKe0Enj+82HMU6aoESFU2HNAdNi3+J53IaOHPiUfT3kSG4L828joDQ==}
+  /@types/react-redux/7.1.24:
+    resolution: {integrity: sha512-7FkurKcS1k0FHZEtdbbgN8Oc6b+stGSfZYjQGicofJ0j4U0qIn/jaSvnP2pLwZKiai3/17xqqxkkrxTgN8UNbQ==}
     dependencies:
       '@types/hoist-non-react-statics': 3.3.1
       '@types/react': 18.0.21
@@ -2788,7 +2788,7 @@ packages:
       trouter: 3.2.0
     dev: false
 
-  /next-redux-wrapper/8.0.0_fefwv6wxsa44kiaacob76o2sdi:
+  /next-redux-wrapper/8.0.0_5b4gxmkmxbqxsxvxe6wzfweszq:
     resolution: {integrity: sha512-zKRdpvDeqNXQr1j5DUWwsB2fz6XpHR32iy2qJGItTKLsbLB9GvtxDL9b4mFCfhDvnzy5dw97UqMjWDpFY8h0zA==}
     peerDependencies:
       next: '>=9'
@@ -2797,7 +2797,7 @@ packages:
     dependencies:
       next: 12.1.0_sfoxds7t5ydpegc3knd667wn6m
       react: 17.0.2
-      react-redux: 7.2.6_sfoxds7t5ydpegc3knd667wn6m
+      react-redux: 7.2.9_sfoxds7t5ydpegc3knd667wn6m
     dev: false
 
   /next/12.1.0_sfoxds7t5ydpegc3knd667wn6m:
@@ -3164,10 +3164,10 @@ packages:
     resolution: {integrity: sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==}
     dev: false
 
-  /react-redux/7.2.6_sfoxds7t5ydpegc3knd667wn6m:
-    resolution: {integrity: sha512-10RPdsz0UUrRL1NZE0ejTkucnclYSgXp5q+tB5SWx2qeG2ZJQJyymgAhwKy73yiL/13btfB6fPr+rgbMAaZIAQ==}
+  /react-redux/7.2.9_sfoxds7t5ydpegc3knd667wn6m:
+    resolution: {integrity: sha512-Gx4L3uM182jEEayZfRbI/G11ZpYdNAnBs70lFVMNdHJI76XYtR+7m0MN+eAs7UHBPhWXcnFPaS+9owSCJQHNpQ==}
     peerDependencies:
-      react: ^16.8.3 || ^17
+      react: ^16.8.3 || ^17 || ^18
       react-dom: '*'
       react-native: '*'
     peerDependenciesMeta:
@@ -3177,7 +3177,7 @@ packages:
         optional: true
     dependencies:
       '@babel/runtime': 7.17.2
-      '@types/react-redux': 7.1.22
+      '@types/react-redux': 7.1.24
       hoist-non-react-statics: 3.3.2
       loose-envify: 1.4.0
       prop-types: 15.8.1
