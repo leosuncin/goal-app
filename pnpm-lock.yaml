@@ -17,7 +17,7 @@ specifiers:
   next: 12.1.0
   next-auth: 4.2.1
   next-connect: 0.13.0
-  next-redux-wrapper: 7.0.5
+  next-redux-wrapper: 8.0.0
   nodemailer: 6.8.0
   react: 17.0.2
   react-dom: 17.0.2
@@ -35,7 +35,7 @@ dependencies:
   next: 12.1.0_sfoxds7t5ydpegc3knd667wn6m
   next-auth: 4.2.1_7p3tgs4bixrkhjsilod2rkkgma
   next-connect: 0.13.0
-  next-redux-wrapper: 7.0.5_fefwv6wxsa44kiaacob76o2sdi
+  next-redux-wrapper: 8.0.0_fefwv6wxsa44kiaacob76o2sdi
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
   react-redux: 7.2.6_sfoxds7t5ydpegc3knd667wn6m
@@ -2770,10 +2770,10 @@ packages:
       trouter: 3.2.0
     dev: false
 
-  /next-redux-wrapper/7.0.5_fefwv6wxsa44kiaacob76o2sdi:
-    resolution: {integrity: sha512-UFXdAWG5i+GFT8+Hoqpx3GArkPh34fVWF9YoA2VSHlBzsrPtnRd7NWM6FNSYUennpommTpWJ09mu+r/1UxyIkg==}
+  /next-redux-wrapper/8.0.0_fefwv6wxsa44kiaacob76o2sdi:
+    resolution: {integrity: sha512-zKRdpvDeqNXQr1j5DUWwsB2fz6XpHR32iy2qJGItTKLsbLB9GvtxDL9b4mFCfhDvnzy5dw97UqMjWDpFY8h0zA==}
     peerDependencies:
-      next: '>=10.0.3'
+      next: '>=9'
       react: '*'
       react-redux: '*'
     dependencies:
