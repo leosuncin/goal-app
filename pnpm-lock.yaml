@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@iconify/json': 2.1.114
+  '@iconify/json': 2.1.115
   '@next-auth/mongodb-adapter': 1.1.0
   '@node-rs/bcrypt': 1.6.1
   '@reduxjs/toolkit': 1.8.5
@@ -42,7 +42,7 @@ dependencies:
   react-toastify: 9.0.8_sfoxds7t5ydpegc3knd667wn6m
 
 devDependencies:
-  '@iconify/json': 2.1.114
+  '@iconify/json': 2.1.115
   '@svgr/core': 6.3.1
   '@types/node': 17.0.18
   '@types/react': 18.0.21
@@ -368,8 +368,8 @@ packages:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
     dev: true
 
-  /@iconify/json/2.1.114:
-    resolution: {integrity: sha512-ZdGYsBWgwnRFawv89ZCQTC5SqlPHr+BMH9eJdQ22oFqWdFPOIElgENCTOR7zTOlU6wmTra9KybPCRTYEYHPMrw==}
+  /@iconify/json/2.1.115:
+    resolution: {integrity: sha512-yfLP+5b2d2k4HQDaE3PGBojl9XgifKEh9Tytpkui8jshgDjQZ3NXbE/nKr4Dxtz+zw7kvq1XWzlsCKsyyJ8TqQ==}
     dependencies:
       '@iconify/types': 1.0.12
       pathe: 0.3.8
