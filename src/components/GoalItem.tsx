@@ -4,13 +4,10 @@ export type GoalItemProps = {
   goal: Goal;
 };
 
-const dateFormat = new Intl.DateTimeFormat(
-  typeof window === 'undefined' ? 'en' : navigator.language,
-  {
-    dateStyle: 'medium',
-    timeStyle: 'medium',
-  },
-);
+const dateFormat = new Intl.DateTimeFormat('en', {
+  dateStyle: 'medium',
+  timeStyle: 'medium',
+});
 
 function GoalItem({ goal }: GoalItemProps) {
   const [removeGoal] = useRemoveMutation();
