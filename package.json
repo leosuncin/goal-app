@@ -4,10 +4,11 @@
   "private": true,
   "license": "GPL-3.0",
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "next dev",
+    "lint": "next lint",
+    "seed": "seed -u $MONGO_URL --drop-collections --set-timestamps fixtures",
+    "start": "next start"
   },
   "dependencies": {
     "@next-auth/mongodb-adapter": "1.1.0",
@@ -34,6 +35,8 @@
     "cypress": "10.9.0",
     "eslint": "8.24.0",
     "eslint-config-next": "12.3.1",
+    "mongo-seeding": "3.7.2",
+    "mongo-seeding-cli": "3.7.2",
     "nodemailer": "6.8.0",
     "typescript": "4.8.4",
     "unplugin-icons": "0.14.11"
