@@ -55,13 +55,28 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 'lts/*'
+      - name: Get pnpm store directory 🗄️
+        id: pnpm-cache
+        run: |
+          echo "::set-output name=pnpm_cache_dir::$(pnpm store path)"
+      - name: Setup the cache 🧺
+        uses: actions/cache@v3
+        with:
+          path: |
+            ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
+            ~/.cache/Cypress
+            .next
+          key: ${{ runner.os }}-project-cache-${{ hashFiles('**/pnpm-lock.yaml') }}
+      - name: Install dependencies 📦
+        run: pnpm install --frozen-lockfile --strict-peer-dependencies
       - name: Seed the DB 🌱
-        run: pnpm --package=mongo-seeding-cli dlx seed --set-timestamps fixtures
+        run: pnpm seed
         env:
-          DB_URI: mongodb://localhost:${{ job.services.mongodb.ports['27017'] }}/admin
+          MONGO_URL: mongodb://localhost:${{ job.services.mongodb.ports['27017'] }}/admin
       - name: Run Cypress tests 🌲
         uses: cypress-io/github-action@v4
         with:
+          install: false
           build: pnpm build
           start: pnpm start
           wait-on: 'http://localhost:3000'
