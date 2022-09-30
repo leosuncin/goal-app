@@ -85,9 +85,10 @@ const Login: NextPage<LoginProps> = ({
     </Layout>
   );
 };
+
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   const csrfToken = await getCsrfToken(context);
-  let { callbackUrl = null, error = null } = context.query;
+  let { callbackUrl, error } = context.query;
 
   if (Array.isArray(callbackUrl)) callbackUrl = callbackUrl[0];
 
@@ -96,8 +97,8 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
   return {
     props: {
       csrfToken,
-      callbackUrl,
-      error,
+      ...(callbackUrl ? { callbackUrl } : {}),
+      ...(error ? { error } : {}),
     },
   };
 }
