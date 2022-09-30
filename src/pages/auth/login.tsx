@@ -56,6 +56,7 @@ const Login: NextPage<LoginProps> = ({
               name="email"
               placeholder="Enter your email"
               autoComplete="email"
+              required
             />
           </div>
 
@@ -67,6 +68,7 @@ const Login: NextPage<LoginProps> = ({
               name="password"
               placeholder="Enter password"
               autoComplete="current-password"
+              required
             />
           </div>
 
