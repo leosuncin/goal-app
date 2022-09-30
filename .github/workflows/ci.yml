@@ -34,3 +34,46 @@ jobs:
           path: |
             cypress/screenshots
             cypress/videos
+
+  e2e-test:
+    runs-on: ubuntu-latest
+    name: E2E tests 🧪
+    services:
+      mongodb:
+        image: healthcheck/mongo
+        ports:
+          - 27017:27017
+    if: "!contains(github.event.head_commit.message, 'skip-ci')"
+    steps:
+      - name: Checkout 🛎
+        uses: actions/checkout@v3
+      - name: Install PNPM 🧰
+        uses: pnpm/action-setup@v2
+        with:
+          version: latest
+      - name: Install Node.js LTS 📜
+        uses: actions/setup-node@v3
+        with:
+          node-version: 'lts/*'
+      - name: Seed the DB 🌱
+        run: pnpm --package=mongo-seeding-cli dlx seed --set-timestamps fixtures
+        env:
+          DB_URI: mongodb://localhost:${{ job.services.mongodb.ports['27017'] }}/admin
+      - name: Run Cypress tests 🌲
+        uses: cypress-io/github-action@v4
+        with:
+          build: pnpm build
+          start: pnpm start
+          wait-on: 'http://localhost:3000'
+        env:
+          MONGO_URL: mongodb://localhost:${{ job.services.mongodb.ports['27017'] }}/admin
+          NEXTAUTH_URL: 'http://localhost:3000'
+          NEXTAUTH_SECRET: ${{ github.sha }}
+      - name: Upload screenshots and videos on failure ⬆️
+        uses: actions/upload-artifact@v3
+        if: failure()
+        with:
+          name: e2e-test screenshots and videos
+          path: |
+            cypress/screenshots
+            cypress/videos
