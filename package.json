@@ -5,6 +5,8 @@
   "license": "GPL-3.0",
   "scripts": {
     "build": "next build",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
     "dev": "next dev",
     "lint": "next lint",
     "seed": "seed -u $MONGO_URL --drop-collections --set-timestamps fixtures",
