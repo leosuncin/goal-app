@@ -49,6 +49,7 @@
     "gitleaks",
     "hadolint",
     "healthcheck",
+    "htmlhint",
     "httpie",
     "iconify",
     "ionide",
