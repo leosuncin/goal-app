@@ -11,7 +11,33 @@
 //
 //
 // -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
+Cypress.Commands.add('login', (email: string, password: string) => {
+  cy.session(
+    [email, password],
+    () => {
+      cy.request('/api/auth/csrf')
+        .its('body.csrfToken')
+        .then((csrfToken: string) =>
+          cy.request({
+            method: 'POST',
+            url: '/api/auth/callback/credentials',
+            body: {
+              email,
+              password,
+              callbackUrl: '/',
+              csrfToken,
+            },
+            form: true,
+          }),
+        );
+    },
+    {
+      validate() {
+        cy.request('/api/auth/session').its('isOkStatusCode').should('be.true');
+      },
+    },
+  );
+});
 //
 //
 // -- This is a child command --
@@ -25,14 +51,11 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 //
-// declare global {
-//   namespace Cypress {
-//     interface Chainable {
-//       login(email: string, password: string): Chainable<void>
-//       drag(subject: string, options?: Partial<TypeOptions>): Chainable<Element>
-//       dismiss(subject: string, options?: Partial<TypeOptions>): Chainable<Element>
-//       visit(originalFn: CommandOriginalFn, url: string, options: Partial<VisitOptions>): Chainable<Element>
-//     }
-//   }
-// }
+declare global {
+  namespace Cypress {
+    interface Chainable {
+      login(email: string, password: string): Chainable<void>;
+    }
+  }
+}
 export {};
