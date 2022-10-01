@@ -5,21 +5,7 @@ describe('Main page', () => {
   const text = faker.lorem.words();
 
   beforeEach(() => {
-    cy.request('/api/auth/csrf')
-      .its('body.csrfToken')
-      .then((csrfToken: string) =>
-        cy.request({
-          method: 'POST',
-          url: '/api/auth/callback/credentials',
-          body: {
-            email: 'john-doe@example.com',
-            password: 'Pa$$w0rd!',
-            callbackUrl: '/',
-            csrfToken,
-          },
-          form: true,
-        }),
-      );
+    cy.login('john-doe@example.com', 'Pa$$w0rd!');
 
     cy.intercept({
       method: 'POST',
