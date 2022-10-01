@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@faker-js/faker': ^7.5.0
+  '@faker-js/faker': 7.5.0
   '@iconify/json': 2.1.115
   '@next-auth/mongodb-adapter': 1.1.0
   '@node-rs/bcrypt': 1.6.1

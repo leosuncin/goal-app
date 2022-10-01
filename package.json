@@ -28,7 +28,7 @@
     "react-toastify": "9.0.8"
   },
   "devDependencies": {
-    "@faker-js/faker": "^7.5.0",
+    "@faker-js/faker": "7.5.0",
     "@iconify/json": "2.1.115",
     "@svgr/core": "6.3.1",
     "@types/node": "17.0.18",
