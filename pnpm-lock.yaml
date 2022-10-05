@@ -2,7 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@faker-js/faker': 7.5.0
-  '@iconify/json': 2.1.117
+  '@iconify/json': 2.1.118
   '@next-auth/mongodb-adapter': 1.1.0
   '@node-rs/bcrypt': 1.6.1
   '@reduxjs/toolkit': 1.8.5
@@ -46,7 +46,7 @@ dependencies:
 
 devDependencies:
   '@faker-js/faker': 7.5.0
-  '@iconify/json': 2.1.117
+  '@iconify/json': 2.1.118
   '@svgr/core': 6.3.1
   '@types/node': 17.0.18
   '@types/react': 18.0.21
@@ -380,8 +380,8 @@ packages:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
     dev: true
 
-  /@iconify/json/2.1.117:
-    resolution: {integrity: sha512-/09IuBTE/X10GHs2/rspqK5VfBypHi/aa2yvqWyOuybbQTjoOcPIoi/zg+s1HvloHynVr+Avxj3whtZ6CfesfA==}
+  /@iconify/json/2.1.118:
+    resolution: {integrity: sha512-mvCocCcWIIoF/IiBQS0hIMqpmXYVbZsmNM8CyQCn6jEPEEKWpW5/vK+W+qOWO7+F7Hrs3//8OyLMh131by7zSQ==}
     dependencies:
       '@iconify/types': 2.0.0
       pathe: 0.3.8
