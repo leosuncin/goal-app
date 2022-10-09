@@ -3,7 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@faker-js/faker': 7.5.0
   '@iconify/json': 2.1.119
-  '@next-auth/mongodb-adapter': 1.1.0
+  '@next-auth/mongodb-adapter': 1.1.1
   '@node-rs/bcrypt': 1.6.1
   '@reduxjs/toolkit': 1.8.6
   '@svgr/core': 6.3.1
@@ -30,7 +30,7 @@ specifiers:
   unplugin-icons: 0.14.11
 
 dependencies:
-  '@next-auth/mongodb-adapter': 1.1.0_aeh7mgb7q7t53gjsz6a6fjr5qu
+  '@next-auth/mongodb-adapter': 1.1.1_aeh7mgb7q7t53gjsz6a6fjr5qu
   '@node-rs/bcrypt': 1.6.1
   '@reduxjs/toolkit': 1.8.6_kuo2ie247izvzll3jejufdtq3q
   http-status-codes: 2.2.0
@@ -444,8 +444,8 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.11
     dev: true
 
-  /@next-auth/mongodb-adapter/1.1.0_aeh7mgb7q7t53gjsz6a6fjr5qu:
-    resolution: {integrity: sha512-jB63vZYwgyVQFNGXwNaxZODVAsdZZCuCvN+uY8mp0lXLIstd/4/GbevWK4eHlUvoteOOKlYJxW46FbRuuh+WBw==}
+  /@next-auth/mongodb-adapter/1.1.1_aeh7mgb7q7t53gjsz6a6fjr5qu:
+    resolution: {integrity: sha512-X5O4U4l2M8nyp/B3qF5GOr/JJw2ShKgWfTZRa80Y5CUzTPPmf09ggL5v5UwCmz9l2RIv2GUxO8hK4qrcaZvDRw==}
     peerDependencies:
       mongodb: ^4.1.1
       next-auth: ^4
