@@ -1,23 +1,16 @@
 import { ReasonPhrases, StatusCodes } from 'http-status-codes';
-import { ObjectId } from 'mongodb';
 import nc from 'next-connect';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
+import { getGoalService } from '~app/lib/goalService';
 import {
   databaseMiddleware,
   validateObjectIdMiddleware,
 } from '~app/lib/mongodb';
 import { sessionMiddleware } from '~app/lib/session';
 
-export type Goal = {
-  text: string;
-  createdAt: Date;
-  author: ObjectId;
-};
-
 async function createGoalHandler(req: NextApiRequest, res: NextApiResponse) {
   const { text } = req.body;
-  const createdAt = new Date();
   const { user } = req;
 
   if (!text) {
@@ -32,38 +25,14 @@ async function createGoalHandler(req: NextApiRequest, res: NextApiResponse) {
     return;
   }
 
-  const goals = req.db.collection<Goal>('goals');
+  const goal = await getGoalService(req.db).createGoal(text, user);
 
-  const { insertedId: _id } = await goals.insertOne({
-    text,
-    createdAt,
-    author: ObjectId.createFromHexString(user.id),
-  });
-
-  res
-    .status(StatusCodes.CREATED)
-    .json({ _id, text, createdAt, author: user.id });
+  res.status(StatusCodes.CREATED).json(goal);
 }
 
 async function listGoalsHandler(req: NextApiRequest, res: NextApiResponse) {
-  const goals = req.db.collection<Goal>('goals');
-  const list: Goal[] = [];
   const { user } = req;
-  const filter = { author: ObjectId.createFromHexString(user.id) };
-
-  const cursor = goals.find(filter, {
-    sort: { createdAt: 1 },
-  });
-
-  if ((await goals.countDocuments(filter)) === 0) {
-    res.status(StatusCodes.NO_CONTENT).send(undefined);
-    return;
-  }
-
-  while (await cursor.hasNext()) {
-    const goal = await cursor.next();
-    list.push(goal!);
-  }
+  const list = await getGoalService(req.db).listGoals({ author: user });
 
   res.json(list);
 }
@@ -85,11 +54,9 @@ async function updateGoalHandler(req: NextApiRequest, res: NextApiResponse) {
     return;
   }
 
-  const goals = req.db.collection<Goal>('goals');
-
-  const goal = await goals.findOne({
-    _id: ObjectId.createFromHexString(id),
-    author: ObjectId.createFromHexString(user.id),
+  const goal = await getGoalService(req.db).updateGoal(id, {
+    text,
+    author: user,
   });
 
   if (!goal) {
@@ -101,31 +68,15 @@ async function updateGoalHandler(req: NextApiRequest, res: NextApiResponse) {
     return;
   }
 
-  const result = await goals.updateOne(
-    { _id: ObjectId.createFromHexString(id) },
-    { $set: { text } },
-  );
-
-  if (result.modifiedCount === 0) {
-    res.status(StatusCodes.NOT_MODIFIED).send(undefined);
-    return;
-  }
-
-  res.json({ ...goal, text });
+  res.json(goal);
 }
 
 async function deleteGoalHandler(req: NextApiRequest, res: NextApiResponse) {
   const { id } = req.params;
   const { user } = req;
+  const result = await getGoalService(req.db).deleteGoal(id, user);
 
-  const goals = req.db.collection<Goal>('goals');
-
-  const result = await goals.deleteOne({
-    _id: ObjectId.createFromHexString(id),
-    author: ObjectId.createFromHexString(user.id),
-  });
-
-  if (result.deletedCount === 0) {
+  if (result === 0) {
     res.status(StatusCodes.NOT_FOUND).json({
       statusCode: StatusCodes.NOT_FOUND,
       code: ReasonPhrases.NOT_FOUND,
