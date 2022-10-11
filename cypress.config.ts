@@ -1,9 +1,21 @@
 import { defineConfig } from 'cypress';
+import { MongoClient } from 'mongodb';
+import { User } from 'next-auth';
+import { getGoalService } from './src/lib/goalService';
 
 export default defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
-      // implement node event listeners here
+      const client = new MongoClient(process.env.MONGO_URL);
+
+      on('task', {
+        insertGoal(payload: { text: string; author: User }) {
+          return getGoalService(client.db()).createGoal(
+            payload.text,
+            payload.author,
+          );
+        },
+      });
     },
     baseUrl: 'http://localhost:3000',
     experimentalSessionAndOrigin: true,

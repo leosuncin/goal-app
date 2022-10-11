@@ -8,8 +8,10 @@
 // commands please read more here:
 // https://on.cypress.io/custom-commands
 // ***********************************************
-//
-//
+import type { User } from 'next-auth';
+
+import type { Goal } from '~app/lib/goalsApi';
+
 // -- This is a parent command --
 Cypress.Commands.add('login', (email: string, password: string) => {
   cy.session(
@@ -38,6 +40,9 @@ Cypress.Commands.add('login', (email: string, password: string) => {
     },
   );
 });
+Cypress.Commands.add('insertGoal', (text: string, author: User) =>
+  cy.task<Goal>('insertGoal', { author, text }),
+);
 //
 //
 // -- This is a child command --
@@ -55,6 +60,7 @@ declare global {
   namespace Cypress {
     interface Chainable {
       login(email: string, password: string): Chainable<void>;
+      insertGoal(text: string, author: User): Chainable<Goal>;
     }
   }
 }

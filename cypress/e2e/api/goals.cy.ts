@@ -1,9 +1,15 @@
 import { faker } from '@faker-js/faker';
 import { ReasonPhrases, StatusCodes } from 'http-status-codes';
+import type { User } from 'next-auth';
 
 describe('Goal REST API', () => {
+  const author: User = {
+    id: '0497fe4d674fe37194a6fcb0',
+    email: 'imprudent0869@example.com',
+  };
+
   beforeEach(() => {
-    cy.login('imprudent0869@example.com', 'Pa$$w0rd!');
+    cy.login(author.email!, 'Pa$$w0rd!');
   });
 
   it('create a new goal', () => {
@@ -37,26 +43,30 @@ describe('Goal REST API', () => {
       text: faker.lorem.sentence(),
     };
 
-    cy.api({
-      url: `/api/goals/8e0de247ef4c40334a42e020`,
-      method: 'PUT',
-      body,
-    }).should((response) => {
-      expect(response.status).to.be.equal(StatusCodes.OK);
-      expect(response.body).to.have.property('_id');
-      expect(response.body).to.have.property('text', body.text);
-      expect(response.body).to.have.property('createdAt');
-      expect(response.body).to.have.property('author');
+    cy.insertGoal(faker.lorem.words(), author).then((task) => {
+      cy.api({
+        url: `/api/goals/${task._id}`,
+        method: 'PUT',
+        body,
+      }).should((response) => {
+        expect(response.status).to.be.equal(StatusCodes.OK);
+        expect(response.body).to.have.property('_id');
+        expect(response.body).to.have.property('text', body.text);
+        expect(response.body).to.have.property('createdAt');
+        expect(response.body).to.have.property('author');
+      });
     });
   });
 
   it('delete a goal', () => {
-    cy.api({
-      url: `/api/goals/2a39c9099a2482a970b2dea4`,
-      method: 'DELETE',
-    }).should((response) => {
-      expect(response.status).to.be.equal(StatusCodes.NO_CONTENT);
-      expect(response.body).to.be.empty;
+    cy.insertGoal(faker.lorem.words(), author).then((task) => {
+      cy.api({
+        url: `/api/goals/${task._id}`,
+        method: 'DELETE',
+      }).should((response) => {
+        expect(response.status).to.be.equal(StatusCodes.NO_CONTENT);
+        expect(response.body).to.be.empty;
+      });
     });
   });
 
