@@ -1,3 +1,4 @@
+const { faker } = require('@faker-js/faker');
 const { getObjectId } = require('mongo-seeding');
 
 /**
@@ -26,6 +27,16 @@ const goals = [
     _id: getObjectId('goal03'),
     text: 'Buy milk',
     author: getObjectId('john-doe'),
+  },
+  {
+    _id: getObjectId('goal04'),
+    text: faker.lorem.sentence(),
+    author: getObjectId('user01'),
+  },
+  {
+    _id: getObjectId('goal05'),
+    text: faker.lorem.sentence(),
+    author: getObjectId('user01'),
   },
 ];
 
