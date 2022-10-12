@@ -7,7 +7,6 @@ const { getObjectId } = require('mongo-seeding');
 const users = [
   {
     _id: getObjectId('john-doe'),
-    id: getObjectId('john-doe').toHexString(),
     name: 'John Doe',
     email: 'john-doe@example.com',
     /* cspell:disable-next-line */
@@ -16,7 +15,6 @@ const users = [
   },
   {
     _id: getObjectId('user01'),
-    id: getObjectId('user01').toHexString(),
     name: faker.name.fullName(),
     email: 'imprudent0869@example.com',
     /* cspell:disable-next-line */

@@ -55,29 +55,28 @@ export default NextAuth({
           placeholder: 'Enter password',
         },
       },
-      async authorize(credentials) {
+      async authorize(credentials): Promise<User | null> {
         if (!credentials || !credentials.email || !credentials.password) {
           throw new Error('UNPROCESSABLE_ENTITY');
         }
 
         const client = await getMongoClient();
-        const users = client.db().collection<User>('users');
+        const users = client.db().collection<Partial<User>>('users');
         const user = await users.findOne({ email: credentials.email });
 
         if (isRegister(credentials)) {
-          const id = new ObjectId();
-          const user: User = {
-            _id: id,
-            id: id.toHexString(),
+          const { insertedId } = await users.insertOne({
             name: credentials.name,
             email: credentials.email,
-          };
-          await users.insertOne({
-            ...user,
             password: await hash(credentials.password),
           });
 
-          return user;
+          return {
+            id: insertedId.toHexString(),
+            email: credentials.email,
+            name: credentials.name,
+            image: null,
+          };
         }
 
         if (!user) return null;
@@ -91,7 +90,12 @@ export default NextAuth({
           delete user.password;
         }
 
-        return user;
+        return {
+          id: user._id.toHexString(),
+          email: user.email,
+          name: user.name,
+          image: user.image,
+        };
       },
     }),
     // ...add more providers here
