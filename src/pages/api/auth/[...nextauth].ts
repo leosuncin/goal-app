@@ -86,8 +86,6 @@ export default NextAuth({
           !(await verify(credentials.password, user.password))
         ) {
           return null;
-        } else {
-          delete user.password;
         }
 
         return {

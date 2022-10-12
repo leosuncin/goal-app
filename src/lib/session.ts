@@ -23,7 +23,7 @@ export async function sessionMiddleware(
   const users = req.db.collection<User>('users');
   const user = await users.findOne(
     { email: jwt.email },
-    { projection: { _id: false, id: true, email: true, name: true } },
+    { projection: { _id: true, email: true, name: true } },
   );
 
   if (!user) {
@@ -35,7 +35,11 @@ export async function sessionMiddleware(
     return;
   }
 
-  req.user = user;
+  req.user = {
+    email: user.email,
+    id: user._id.toHexString(),
+    name: user.name,
+  };
 
   next();
 }
