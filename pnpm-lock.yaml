@@ -11,6 +11,7 @@ specifiers:
   '@types/react': 18.0.21
   '@types/react-redux': 7.1.24
   cypress: 10.10.0
+  cypress-each: ^1.11.0
   cypress-plugin-api: 1.2.3
   eslint: 8.25.0
   eslint-config-next: 12.3.1
@@ -53,6 +54,7 @@ devDependencies:
   '@types/react': 18.0.21
   '@types/react-redux': 7.1.24
   cypress: 10.10.0
+  cypress-each: 1.11.0
   cypress-plugin-api: 1.2.3_cypress@10.10.0
   eslint: 8.25.0
   eslint-config-next: 12.3.1_z4bbprzjrhnsfa24uvmcbu7f5q
@@ -1646,6 +1648,10 @@ packages:
 
   /csstype/3.0.10:
     resolution: {integrity: sha512-2u44ZG2OcNUO9HDp/Jl8C07x6pU/eTR3ncV91SiK3dhG9TWvRVsCoJw14Ckx5DgWkzGA3waZWO3d7pgqpUI/XA==}
+
+  /cypress-each/1.11.0:
+    resolution: {integrity: sha512-zeqeQkppPL6BKLIJdfR5IUoZRrxRudApJapnFzWCkkrmefQSqdlBma2fzhmniSJ3TRhxe5xpK3W3/l8aCrHvwQ==}
+    dev: true
 
   /cypress-plugin-api/1.2.3_cypress@10.10.0:
     resolution: {integrity: sha512-dR/UB/9Im/l05kFubUdkgI3vPsVunV0EOhBm0QKmG8Xy2AXqPi4ah5IZG6G/elBMOyIHAMT9Lbf5TNfZhE8T8A==}

@@ -14,6 +14,7 @@
 // ***********************************************************
 
 import 'cypress-plugin-api';
+import 'cypress-each';
 
 // Import commands.js using ES2015 syntax:
 import './commands';

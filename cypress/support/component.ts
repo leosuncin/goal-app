@@ -14,6 +14,7 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
+import 'cypress-each';
 import './commands';
 import '~app/styles/globals.css';
 
