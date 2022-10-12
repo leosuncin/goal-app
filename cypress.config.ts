@@ -1,11 +1,14 @@
+import { loadEnvConfig } from '@next/env';
 import { defineConfig } from 'cypress';
 import { MongoClient } from 'mongodb';
-import { User } from 'next-auth';
+import type { User } from 'next-auth';
+
 import { getGoalService } from './src/lib/goalService';
 
 export default defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
+      loadEnvConfig(config.projectRoot);
       const client = new MongoClient(process.env.MONGO_URL);
 
       on('task', {
