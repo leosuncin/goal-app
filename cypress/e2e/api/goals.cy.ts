@@ -1,15 +1,14 @@
 import { faker } from '@faker-js/faker';
 import { ReasonPhrases, StatusCodes } from 'http-status-codes';
-import type { User } from 'next-auth';
 
 describe('Goal REST API', () => {
-  const author: User = {
+  const author = {
     id: '0497fe4d674fe37194a6fcb0',
     email: 'imprudent0869@example.com',
   };
 
   beforeEach(() => {
-    cy.login(author.email!, 'Pa$$w0rd!');
+    cy.login(author.email, 'Pa$$w0rd!');
   });
 
   it('create a new goal', () => {
@@ -108,58 +107,36 @@ describe('Goal REST API', () => {
     });
   });
 
-  it('fail when the goal not exist', () => {
-    const notFoundResponse = {
-      statusCode: StatusCodes.NOT_FOUND,
-      code: ReasonPhrases.NOT_FOUND,
-      message: `There isn't any goal with id: 6345d02ae60192f0010ce732`,
-    };
+  it.each(['PUT', 'DELETE'])('fail to %s when the goal not exist', (method) => {
+    const id = faker.database.mongodbObjectId();
 
     cy.api({
-      url: '/api/goals/6345d02ae60192f0010ce732',
-      method: 'PUT',
+      url: `/api/goals/${id}`,
+      method,
       body: { text: '' },
       failOnStatusCode: false,
     }).should((response) => {
       expect(response.status).to.be.equal(StatusCodes.NOT_FOUND);
-      expect(response.body).to.deep.equal(notFoundResponse);
-    });
-
-    cy.api({
-      url: '/api/goals/6345d02ae60192f0010ce732',
-      method: 'DELETE',
-      failOnStatusCode: false,
-    }).should((response) => {
-      expect(response.status).to.be.equal(StatusCodes.NOT_FOUND);
-      expect(response.body).to.deep.equal(notFoundResponse);
+      expect(response.body).to.deep.equal({
+        statusCode: StatusCodes.NOT_FOUND,
+        code: ReasonPhrases.NOT_FOUND,
+        message: `There isn't any goal with id: ${id}`,
+      });
     });
   });
 
-  it('fail with an invalid id', () => {
-    const invalidId = faker.datatype.uuid();
-    const badRequestResponse = {
-      statusCode: StatusCodes.BAD_REQUEST,
-      code: ReasonPhrases.BAD_REQUEST,
-      message: 'The id must be a valid ObjectId',
-    };
-
+  it.each(['PUT', 'DELETE'])('fail to %s with an invalid id', (method) => {
     cy.api({
-      url: `/api/goals/${invalidId}`,
-      method: 'PUT',
-      body: { text: '' },
+      url: `/api/goals/${faker.datatype.uuid()}`,
+      method,
       failOnStatusCode: false,
     }).should((response) => {
       expect(response.status).to.be.equal(StatusCodes.BAD_REQUEST);
-      expect(response.body).to.deep.equal(badRequestResponse);
-    });
-
-    cy.api({
-      url: `/api/goals/${invalidId}`,
-      method: 'DELETE',
-      failOnStatusCode: false,
-    }).should((response) => {
-      expect(response.status).to.be.equal(StatusCodes.BAD_REQUEST);
-      expect(response.body).to.deep.equal(badRequestResponse);
+      expect(response.body).to.deep.equal({
+        statusCode: StatusCodes.BAD_REQUEST,
+        code: ReasonPhrases.BAD_REQUEST,
+        message: 'The id must be a valid ObjectId',
+      });
     });
   });
 });
