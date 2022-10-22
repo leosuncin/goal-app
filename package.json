@@ -38,7 +38,7 @@
     "cypress": "10.10.0",
     "cypress-each": "1.11.0",
     "cypress-plugin-api": "1.4.0",
-    "eslint": "8.25.0",
+    "eslint": "8.26.0",
     "eslint-config-next": "12.3.1",
     "mongo-seeding": "3.7.2",
     "mongo-seeding-cli": "3.7.2",
