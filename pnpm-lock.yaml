@@ -21,7 +21,7 @@ specifiers:
   mongo-seeding-cli: 3.7.2
   mongodb: 4.11.0
   next: 12.3.1
-  next-auth: 4.14.0
+  next-auth: 4.15.0
   next-connect: 0.13.0
   next-redux-wrapper: 8.0.0
   nodemailer: 6.8.0
@@ -33,13 +33,13 @@ specifiers:
   unplugin-icons: 0.14.12
 
 dependencies:
-  '@next-auth/mongodb-adapter': 1.1.1_md76zh5oazqg6vhgtp5ouxg6ra
+  '@next-auth/mongodb-adapter': 1.1.1_c2hs3f6tdo2m2hud5hzs3zngde
   '@node-rs/bcrypt': 1.6.1
   '@reduxjs/toolkit': 1.8.6_kuo2ie247izvzll3jejufdtq3q
   http-status-codes: 2.2.0
   mongodb: 4.11.0
   next: 12.3.1_biqbaboplfbrettd7655fr4n2y
-  next-auth: 4.14.0_pvhs6umhoiyo7cgwjp6cvqsra4
+  next-auth: 4.15.0_pvhs6umhoiyo7cgwjp6cvqsra4
   next-connect: 0.13.0
   next-redux-wrapper: 8.0.0_wnml2u2rjvrq3plu2g7enler3e
   react: 18.2.0
@@ -1174,14 +1174,14 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.11
     dev: true
 
-  /@next-auth/mongodb-adapter/1.1.1_md76zh5oazqg6vhgtp5ouxg6ra:
+  /@next-auth/mongodb-adapter/1.1.1_c2hs3f6tdo2m2hud5hzs3zngde:
     resolution: {integrity: sha512-X5O4U4l2M8nyp/B3qF5GOr/JJw2ShKgWfTZRa80Y5CUzTPPmf09ggL5v5UwCmz9l2RIv2GUxO8hK4qrcaZvDRw==}
     peerDependencies:
       mongodb: ^4.1.1
       next-auth: ^4
     dependencies:
       mongodb: 4.11.0
-      next-auth: 4.14.0_pvhs6umhoiyo7cgwjp6cvqsra4
+      next-auth: 4.15.0_pvhs6umhoiyo7cgwjp6cvqsra4
     dev: false
 
   /@next/env/12.3.1:
@@ -4011,8 +4011,8 @@ packages:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
     dev: true
 
-  /next-auth/4.14.0_pvhs6umhoiyo7cgwjp6cvqsra4:
-    resolution: {integrity: sha512-pD5sin6kq/uIx3Cod2/0JFnViEnngBTTNy4CdfRaYc2QzV2zwpWAbQny2Ezlg0GjEozDhKC53JJxRRE4AmNKEw==}
+  /next-auth/4.15.0_pvhs6umhoiyo7cgwjp6cvqsra4:
+    resolution: {integrity: sha512-IasNzGLM2VlmyioDdZaRwBBBm8b5xo+zbbqVWHFh0bY6iQUZ3vuudrsdHNdxkXV3LSHdKNaoWEpYr4BydB7mCw==}
     engines: {node: ^12.19.0 || ^14.15.0 || ^16.13.0}
     peerDependencies:
       next: ^12.2.5
