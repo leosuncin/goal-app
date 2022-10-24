@@ -41,7 +41,7 @@ export const getServerSideProps = wrapper.getServerSideProps(
 
     store.dispatch(goalsApi.endpoints.list.initiate());
 
-    await Promise.all(goalsApi.util.getRunningOperationPromises());
+    await Promise.all(store.dispatch(goalsApi.util.getRunningQueriesThunk()));
 
     return {
       props: {
