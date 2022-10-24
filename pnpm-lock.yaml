@@ -9,7 +9,7 @@ specifiers:
   '@reduxjs/toolkit': 1.8.6
   '@svgr/core': 6.3.1
   '@types/node': 17.0.18
-  '@types/react': 18.0.21
+  '@types/react': 18.0.22
   '@types/react-redux': 7.1.24
   cypress: 10.10.0
   cypress-each: 1.11.0
@@ -44,7 +44,7 @@ dependencies:
   next-redux-wrapper: 8.0.0_wnml2u2rjvrq3plu2g7enler3e
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
-  react-redux: 8.0.4_rj7ozvcq3uehdlnj3cbwzbi5ce
+  react-redux: 8.0.4_3sauqnnrv7lnox3glal4dmngp4
   react-toastify: 9.0.8_biqbaboplfbrettd7655fr4n2y
 
 devDependencies:
@@ -53,7 +53,7 @@ devDependencies:
   '@next/env': 12.3.1
   '@svgr/core': 6.3.1
   '@types/node': 17.0.18
-  '@types/react': 18.0.21
+  '@types/react': 18.0.22
   '@types/react-redux': 7.1.24
   cypress: 10.10.0
   cypress-each: 1.11.0
@@ -1484,7 +1484,7 @@ packages:
     dependencies:
       immer: 9.0.12
       react: 18.2.0
-      react-redux: 8.0.4_rj7ozvcq3uehdlnj3cbwzbi5ce
+      react-redux: 8.0.4_3sauqnnrv7lnox3glal4dmngp4
       redux: 4.1.2
       redux-thunk: 2.4.1_redux@4.1.2
       reselect: 4.1.5
@@ -1649,7 +1649,7 @@ packages:
   /@types/hoist-non-react-statics/3.3.1:
     resolution: {integrity: sha512-iMIqiko6ooLrTh1joXodJK5X9xeEALT1kM5G3ZLhD3hszxBdIEd5C75U834D9mLcINgD4OyZf5uQXjkuYydWvA==}
     dependencies:
-      '@types/react': 18.0.21
+      '@types/react': 18.0.22
       hoist-non-react-statics: 3.3.2
 
   /@types/json5/0.0.29:
@@ -1681,13 +1681,13 @@ packages:
     resolution: {integrity: sha512-7FkurKcS1k0FHZEtdbbgN8Oc6b+stGSfZYjQGicofJ0j4U0qIn/jaSvnP2pLwZKiai3/17xqqxkkrxTgN8UNbQ==}
     dependencies:
       '@types/hoist-non-react-statics': 3.3.1
-      '@types/react': 18.0.21
+      '@types/react': 18.0.22
       hoist-non-react-statics: 3.3.2
       redux: 4.1.2
     dev: true
 
-  /@types/react/18.0.21:
-    resolution: {integrity: sha512-7QUCOxvFgnD5Jk8ZKlUAhVcRj7GuJRjnjjiY/IUBWKgOlnvDvTMLD4RTF7NPyVmbRhNrbomZiOepg7M/2Kj1mA==}
+  /@types/react/18.0.22:
+    resolution: {integrity: sha512-4yWc5PyCkZN8ke8K9rQHkTXxHIWHxLzzW6RI1kXVoepkD3vULpKzC2sDtAMKn78h92BRYuzf+7b/ms7ajE6hFw==}
     dependencies:
       '@types/prop-types': 15.7.4
       '@types/scheduler': 0.16.2
@@ -4053,7 +4053,7 @@ packages:
     dependencies:
       next: 12.3.1_biqbaboplfbrettd7655fr4n2y
       react: 18.2.0
-      react-redux: 8.0.4_rj7ozvcq3uehdlnj3cbwzbi5ce
+      react-redux: 8.0.4_3sauqnnrv7lnox3glal4dmngp4
     dev: false
 
   /next/12.3.1_biqbaboplfbrettd7655fr4n2y:
@@ -4456,7 +4456,7 @@ packages:
     resolution: {integrity: sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==}
     dev: false
 
-  /react-redux/8.0.4_rj7ozvcq3uehdlnj3cbwzbi5ce:
+  /react-redux/8.0.4_3sauqnnrv7lnox3glal4dmngp4:
     resolution: {integrity: sha512-yMfQ7mX6bWuicz2fids6cR1YT59VTuT8MKyyE310wJQlINKENCeT1UcPdEiX6znI5tF8zXyJ/VYvDgeGuaaNwQ==}
     peerDependencies:
       '@types/react': ^16.8 || ^17.0 || ^18.0
@@ -4479,7 +4479,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.17.2
       '@types/hoist-non-react-statics': 3.3.1
-      '@types/react': 18.0.21
+      '@types/react': 18.0.22
       '@types/use-sync-external-store': 0.0.3
       hoist-non-react-statics: 3.3.2
       react: 18.2.0
