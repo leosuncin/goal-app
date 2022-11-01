@@ -8,7 +8,7 @@ specifiers:
   '@node-rs/bcrypt': 1.6.1
   '@reduxjs/toolkit': 1.8.6
   '@svgr/core': 6.5.0
-  '@types/node': 18.11.7
+  '@types/node': 18.11.9
   '@types/react': 18.0.23
   '@types/react-redux': 7.1.24
   cypress: 10.11.0
@@ -52,7 +52,7 @@ devDependencies:
   '@iconify/json': 2.1.128
   '@next/env': 12.3.1
   '@svgr/core': 6.5.0
-  '@types/node': 18.11.7
+  '@types/node': 18.11.9
   '@types/react': 18.0.23
   '@types/react-redux': 7.1.24
   cypress: 10.11.0
@@ -61,7 +61,7 @@ devDependencies:
   eslint: 8.26.0
   eslint-config-next: 12.3.1_wyqvi574yv7oiwfeinomdzmc3m
   mongo-seeding: 3.7.2
-  mongo-seeding-cli: 3.7.2_@types+node@18.11.7
+  mongo-seeding-cli: 3.7.2_@types+node@18.11.9
   nodemailer: 6.8.0
   typescript: 4.8.4
   unplugin-icons: 0.14.12_@svgr+core@6.5.0
@@ -1655,15 +1655,15 @@ packages:
     resolution: {integrity: sha512-WcdpPJCakFzcWWD9juKoZbRtQxKIMYF/JIAM4JrNHrMcnJL6/a2NWjXxW7fo9hxboxxkg+icff8d7+WIEvKgYQ==}
     dependencies:
       '@types/bson': 4.2.0
-      '@types/node': 18.11.7
+      '@types/node': 18.11.9
     dev: true
 
   /@types/node/14.18.31:
     resolution: {integrity: sha512-vQAnaReSQkEDa8uwAyQby8bYGKu84R/deEc6mg5T8fX6gzCn8QW6rziSgsti1fNvsrswKUKPnVTi7uoB+u62Mw==}
     dev: true
 
-  /@types/node/18.11.7:
-    resolution: {integrity: sha512-LhFTglglr63mNXUSRYD8A+ZAIu5sFqNJ4Y2fPuY7UlrySJH87rRRlhtVmMHplmfk5WkoJGmDjE9oiTfyX94CpQ==}
+  /@types/node/18.11.9:
+    resolution: {integrity: sha512-CRpX21/kGdzjOpFsZSkcrXMGIBWMGNIHXXBVFSH+ggkftxg+XYP20TESbh+zFvFj3EQOl5byk0HTRn1IL6hbqg==}
 
   /@types/parse-json/4.0.0:
     resolution: {integrity: sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==}
@@ -1710,7 +1710,7 @@ packages:
   /@types/whatwg-url/8.2.1:
     resolution: {integrity: sha512-2YubE1sjj5ifxievI5Ge1sckb9k/Er66HyR2c+3+I6VDUUg1TLPdYYTEbQ+DjRkS4nTxMJhgWfSfMRD2sl2EYQ==}
     dependencies:
-      '@types/node': 18.11.7
+      '@types/node': 18.11.9
       '@types/webidl-conversions': 6.1.1
     dev: false
 
@@ -1718,7 +1718,7 @@ packages:
     resolution: {integrity: sha512-Cn6WYCm0tXv8p6k+A8PvbDG763EDpBoTzHdA+Q/MF6H3sapGjCm9NzoaJncJS9tUKSuCoDs9XHxYYsQDgxR6kw==}
     requiresBuild: true
     dependencies:
-      '@types/node': 18.11.7
+      '@types/node': 18.11.9
     dev: true
     optional: true
 
@@ -3888,7 +3888,7 @@ packages:
     resolution: {integrity: sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q==}
     dev: true
 
-  /mongo-seeding-cli/3.7.2_@types+node@18.11.7:
+  /mongo-seeding-cli/3.7.2_@types+node@18.11.9:
     resolution: {integrity: sha512-fhQtu7j5bNAzaSHyf+kxOhXDx9mDD6pRstBZMsXspg7aO2bOx9dfa3GlAYbdpSel7t2QcMmfbaBe77TDdtpGPw==}
     hasBin: true
     dependencies:
@@ -3896,7 +3896,7 @@ packages:
       command-line-usage: 6.1.3
       extend: 3.0.2
       mongo-seeding: 3.7.2
-      ts-node: 10.9.1_evej5wzm4hojmu6uzxwpspdmsu
+      ts-node: 10.9.1_cbe7ovvae6zqfnmtgctpgpys54
       typescript: 4.8.4
     transitivePeerDependencies:
       - '@swc/core'
@@ -4972,7 +4972,7 @@ packages:
       regexparam: 1.3.0
     dev: false
 
-  /ts-node/10.9.1_evej5wzm4hojmu6uzxwpspdmsu:
+  /ts-node/10.9.1_cbe7ovvae6zqfnmtgctpgpys54:
     resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
     hasBin: true
     peerDependencies:
@@ -4991,7 +4991,7 @@ packages:
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.3
-      '@types/node': 18.11.7
+      '@types/node': 18.11.9
       acorn: 8.8.0
       acorn-walk: 8.2.0
       arg: 4.1.3
