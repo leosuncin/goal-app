@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "@faker-js/faker": "7.6.0",
-    "@iconify/json": "2.1.128",
+    "@iconify/json": "2.2.263",
     "@next/env": "12.3.2",
     "@svgr/core": "6.5.0",
     "@types/node": "18.11.9",
