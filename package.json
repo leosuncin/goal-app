@@ -31,7 +31,7 @@
     "@faker-js/faker": "7.6.0",
     "@iconify/json": "2.1.128",
     "@next/env": "12.3.2",
-    "@svgr/core": "6.5.0",
+    "@svgr/core": "6.5.1",
     "@types/node": "18.11.9",
     "@types/react": "18.0.23",
     "@types/react-redux": "7.1.24",
